@@ -55,3 +55,52 @@
         height:100%;
     }    
 }
+.author {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 0;
+    margin-bottom: 2rem;
+    @include radius(0);
+    > .card-header {
+        border: 0;
+        background-color: transparent;
+        img {
+            width: 5rem;
+            @include radius(50%);
+        }
+        @include only-xs {
+            width: 36%;
+        }
+        @include only-sm {
+            width: 24%;
+        }
+        @include only-md {
+            width: 18%;
+        }
+        @include only-lg {
+            width: 20%;
+        }
+    }
+    > .card-block {
+        padding: .5rem;
+        > a.card-title {
+            text-decoration: none;
+            color: $post-author-link-color;
+            &:hover {
+                color: $post-author-link-color-hover;
+            }
+        }
+        @include only-xs {
+            width: 62%;
+        }
+        @include only-sm {
+            width: 76%;
+        }
+        @include only-md {
+            width: 80%
+        }
+        @include only-lg {
+            width: 80%
+        }
+    }
+}

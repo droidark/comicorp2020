@@ -1,8 +1,7 @@
-/*
-    +------------------+
-    | U P  M I X I N S |
-    +------------------+
-*/
+// +------------------+
+// | U P  M I X I N S |
+// +------------------+
+
 // SMALL DEVICES (LANDSCAPE PHONES, 576PX AND UP)
 @mixin up-sm {
     @media (min-width: $up-sm-min) {
@@ -31,11 +30,11 @@
     }
 }
 
-/*
-    +----------------------+
-    | D O W N  M I X I N S |
-    +----------------------+
-*/
+
+// +----------------------+
+// | D O W N  M I X I N S |
+// +----------------------+
+
 // EXTRA SMALL DEVICES (PORTRAIT PHONES, LESS THAN 576PX)
 @mixin down-xs {
     @media (max-width: $down-xs-max) {
@@ -64,11 +63,11 @@
     }
 }
 
-/*
-    +----------------------+
-    | O N L Y  M I X I N S |
-    +----------------------+
-*/
+
+// +----------------------+
+// | O N L Y  M I X I N S |
+// +----------------------+
+
 // EXTRA SMALL DEVICES (PORTRAIT PHONES, LESS THAN 576PX)
 @mixin only-xs {
     @media (max-width: $only-xs-max) {

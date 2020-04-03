@@ -8,6 +8,8 @@
     * https://1.bp.blogspot.com/-G_MVP0t9PHc/Xoab66xXU9I/AAAAAAAABg4/znyX2kT9KyEO9AF9wKVotsIztYJzSBLzgCLcBGAsYHQ/s1600/tpattern-inv.png
 * banner.jpg
     * https://1.bp.blogspot.com/-HJiKytvdoTA/XoacXQYp4jI/AAAAAAAABhM/9LSzq8J6QOI0xbHmZykjgZZee0BZarUQACLcBGAsYHQ/s1600/banner.jpg
+* logo.svg
+    https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg
 
 ## DEMO IMAGES
 * demo01.jpg

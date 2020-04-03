@@ -1,0 +1,28 @@
+.angles {
+    height: 5rem;
+    max-width: 1240px;
+    clip-path: polygon(0 0, 100% 0, 94.8% 100%, 5.2% 100%);
+    background-color: #f8f9fa;
+    @include only-lg {
+        clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+    }
+    @include down-md {
+        clip-path: none;
+    }
+}
+.surf {
+    margin-top: -5rem;
+}
+.navbar-brand {
+    font-size: 2.25rem;
+    @include down-xs {
+        font-size: 1.8em;
+    }
+}
+.logo {
+    width: 50px;
+    margin-right: .4rem;
+    @include down-xs {
+        width: 42px;
+    }
+}

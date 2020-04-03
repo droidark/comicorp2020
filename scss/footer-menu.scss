@@ -1,0 +1,18 @@
+.antarctica {
+    background-color: $footer-menu-bg-color;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, .4), inset 0 1px 1px rgba(255, 255, 255, .2);
+    border: 1px solid #000;
+    padding: .5rem 0;
+    color: #666;
+    font-size: .8em;
+    a {
+        color: $footer-menu-link-color;
+        text-decoration: none;
+    }
+    .brand {
+        padding: 0 0 0 .4rem;
+    }
+    #year {
+        padding: 0 .2rem;
+    }
+}

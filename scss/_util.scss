@@ -1,0 +1,12 @@
+@mixin transition($property, $delay, $curve) {
+    transition: $property $delay $curve;
+    -moz-transition: $property $delay $curve;
+    -webkit-transition: $property $delay $curve;
+    -o-transition: $property $delay $curve;
+}
+
+@mixin radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}

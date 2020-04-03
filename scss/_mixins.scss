@@ -1,0 +1,105 @@
+/*
+    +------------------+
+    | U P  M I X I N S |
+    +------------------+
+*/
+// SMALL DEVICES (LANDSCAPE PHONES, 576PX AND UP)
+@mixin up-sm {
+    @media (min-width: $up-sm-min) {
+        @content;
+    }
+}
+
+// MEDIUM DEVICES (TABLETS, 768PX AND UP)
+@mixin up-md {
+    @media (min-width: $up-md-min) {
+        @content;
+    }
+}
+
+// LARGE DEVICES (DESKTOPS, 992PX AND UP)
+@mixin up-lg {
+    @media (min-width: $up-lg-min) {
+        @content;
+    }
+}
+
+// EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
+@mixin up-xl {
+    @media (min-width: $up-lg-min) {
+        @content;
+    }
+}
+
+/*
+    +----------------------+
+    | D O W N  M I X I N S |
+    +----------------------+
+*/
+// EXTRA SMALL DEVICES (PORTRAIT PHONES, LESS THAN 576PX)
+@mixin down-xs {
+    @media (max-width: $down-xs-max) {
+        @content;
+    }
+}
+
+// SMALL DEVICES (LANDSCAPE PHONES, LESS THAN 768PX)
+@mixin down-sm {
+    @media (max-width: $down-sm-max) {
+        @content;
+    }
+}
+
+// MEDIUM DEVICES (TABLETS, LESS THAN 992PX)
+@mixin down-md {
+    @media (max-width: $down-md-max) {
+        @content;
+    }
+}
+
+// LARGE DEVICES (DESKTOPS, LESS THAN 1200PX)
+@mixin down-lg {
+    @media (max-width: $down-lg-max) {
+        @content;
+    }
+}
+
+/*
+    +----------------------+
+    | O N L Y  M I X I N S |
+    +----------------------+
+*/
+// EXTRA SMALL DEVICES (PORTRAIT PHONES, LESS THAN 576PX)
+@mixin only-xs {
+    @media (max-width: $only-xs-max) {
+        @content;
+    }
+}
+
+// SMALL DEVICES (LANDSCAPE PHONES, 576PX AND UP)
+@mixin only-sm {
+    @media (min-width: $only-sm-min) and (max-width: $only-sm-max) {
+        @content;
+    }
+}
+
+// MEDIUM DEVICES (TABLETS, 768PX AND UP)
+@mixin only-md {
+    @media (min-width: $only-md-min) and (max-width: $only-md-max) {
+        @content;
+    }
+}
+
+// LARGE DEVICES (DESKTOPS, 992PX AND UP)
+@mixin only-lg {
+    @media (min-width: $only-lg-min) and (max-width: $only-lg-max) {
+        @content;
+    }
+}
+
+// EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
+@mixin only-xl {
+    @media (min-width: $only-xl-min) {
+        @content;
+    }
+}

@@ -1,0 +1,57 @@
+@use 'fonts';
+
+body {
+    font-family: fonts.$titillium-web;
+    background: #fff url($body-background-url) top center no-repeat fixed;
+    background-size: cover;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    @include transition(all, .35s, ease-in-out);
+    cursor: pointer;
+    font-weight: 500;
+}
+.master-container {
+    width: 100%;
+    background: url($pattern-url) top left repeat rgba(0,156,255,0.4);
+    min-height: 16rem;
+    padding-bottom: 1rem;
+}
+// BG COLOR
+.bg-blue { background-color: $blue; }
+.bg-green { background-color: $green; }
+.bg-orange { background-color: $orange; }
+.bg-pink { background-color: $pink; }
+.bg-red { background-color: $red; }
+.bg-violet { background-color: $violet; }
+.bg-yellow { background-color: $yellow; }
+
+// TEXT COLOR
+.blue { color: $blue !important; }
+.green { color: $green !important; }
+.orange { color: $orange !important; };
+.pink { color: $pink !important; }
+.red { color: $red !important; }
+.violet { color: $violet !important; }
+.yellow { color: $yellow !important; }
+
+// BORDER COLOR
+.bdr {
+    border-left-width: 3px;
+    border-left-style: solid;
+    &-blue { border-color: $blue; }
+    &-green { border-color: $green; }
+    &-orange { border-color: $orange; }
+    &-pink { border-color: $pink; }
+    &-red { border-color: $red; }
+    &-violet { border-color: $violet; }
+    &-yellow { border-color: $yellow; }
+}
+
+.clear{ clear: both; }
+.hide { display: none; }
+.avatar {
+    @include radius(50%);
+}

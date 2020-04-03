@@ -1,0 +1,22 @@
+.container .row {
+    .col-xl h1{
+        color: $title-color;
+        text-align: center;
+        margin-top: 2.5rem;
+        font-weight: bold;
+        font-size: 3em;
+    }
+    .breadcrumb {
+        background-color: transparent;
+        margin: auto;
+        .breadcrumb-item {
+            color: $breadcums-color;
+            &::before {
+                color: $breadcums-color;
+            }
+        }
+        .active {
+            color: $breadcums-active-color;
+        }
+    }
+}

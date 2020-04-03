@@ -1,0 +1,56 @@
+/*
+    +----------------------------+
+    | U P  B R E A K P O I N T S |
+    +----------------------------+
+*/
+// SMALL DEVICES
+$up-sm-min: 576px;
+
+// MEDIUM DEVICES
+$up-md-min: 768px;
+
+// LARGE DEVICES
+$up-lg-min: 992px;
+
+// EXTRA LARGE DEVICES
+$up-xl-min: 1200px;
+
+/*
+    +--------------------------------+
+    | D O W N  B R E A K P O I N T S |
+    +--------------------------------+
+*/
+// EXTRA SMALL DEVICES
+$down-xs-max: 575.98px;
+
+// SMALL DEVICES
+$down-sm-max: 767.98px;
+
+// MEDIUM DEVICES
+$down-md-max: 991.98px;
+
+// LARGE DEVICES
+$down-lg-max: 1199.98px;
+
+/*
+    +--------------------------------+
+    | O N L Y  B R E A K P O I N T S |
+    +--------------------------------+
+*/
+// EXTRA SMALL DEVICES
+$only-xs-max: 575.98px;
+
+// SMALL DEVICES
+$only-sm-min: 576px;
+$only-sm-max: 767.98px;
+
+// MEDIUM DEVICES
+$only-md-min: 768px;
+$only-md-max: 991.98px;
+
+// LARGE DEVICES
+$only-lg-min: 992px;
+$only-lg-max: 1199.98px;
+
+// EXTRA LARGE DEVICES
+$only-xl-min: 1200px;

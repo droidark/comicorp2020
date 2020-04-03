@@ -1,0 +1,42 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+// VARIABLES
+@import 'breakpoints';
+@import 'colors';
+@import 'fonts';
+@import 'resources';
+@import 'util';
+
+// MIXINS
+@import 'mixins';
+
+// GENERAL
+@import 'general';
+
+// TOP-MENUBAR
+@import 'top-menubar';
+
+// NAVBAR
+@import 'navbar';
+
+// TITLE & BREADCUMS
+@import 'title-breadcums';
+
+// NEWS BAR
+@import 'newsbar';
+
+// MAIN
+@import 'main';
+
+// POST BODY
+@import 'post-body';
+
+// SIDEBAR
+@import 'sidebar';
+
+// FOOTER
+@import 'footer';
+
+// FOOTER-MENU
+@import 'footer-menu';

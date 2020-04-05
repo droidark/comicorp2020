@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='strm.xml' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <title><data:view.title.escaped/> - <data:view.description.escaped/></title>
+    <b:include data='blog' name='all-head-content'/>
+    <!-- BOOTSTRAP CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous'/>
+    <!-- AWESOME FONTS CSS -->
+    <script src='https://kit.fontawesome.com/c01b440588.js' crossorigin='anonymous' />
+    <!-- COMICORP 2020 CSS -->
+    <link rel='stylesheet' href='https://combinatronics.com/droidark/comicorp2020/develop/public/stylesheets/style.css'/>
+    <b:skin><![CDATA[]]></b:skin>
+  </head>
+  <body>
+    <!-- TOP MENU BAR SECTION -->
+    <div class='w-100 top-menu-bar'>
+      <div class='container'>
+          <b:section id='topMenuBar' class='row' showaddelement='yes'>            
+            <b:widget id='LinkList1' locked='true' title='' type='LinkList' version='2' visible='true'>              
+              <b:widget-settings>
+                <b:widget-setting name='sorting'>NONE</b:widget-setting>
+                <b:widget-setting name='text-0'>Users</b:widget-setting>
+                <b:widget-setting name='link-0'>#</b:widget-setting>
+                <b:widget-setting name='text-1'>Answers</b:widget-setting>
+                <b:widget-setting name='link-1'>#</b:widget-setting>
+                <b:widget-setting name='text-2'>Reviews</b:widget-setting>
+                <b:widget-setting name='link-2'>#</b:widget-setting>
+                <b:widget-setting name='text-3'>Privacy</b:widget-setting>
+                <b:widget-setting name='link-3'>#</b:widget-setting>
+                <b:widget-setting name='text-4'>Contact</b:widget-setting>
+                <b:widget-setting name='link-4'>#</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+                <b:include name='widget-title'/>
+                <b:include name='content'/>
+              </b:includable>
+              <b:includable id='content'>
+                <div class='widget-content'>
+                  <div class='col-lg'>
+                    <ul class='nav'>
+                      <!-- LOOP TO PRINT LINKS -->
+                      <b:loop values='data:links' var='link'>
+                        <li class='nav-item'><a class='nav-link' expr:href='data:link.target'><data:link.name/></a></li>
+                      </b:loop>
+                    </ul>
+                  </div>
+                </div>
+              </b:includable>              
+            </b:widget>
+            <b:widget id='HTML1' locked='true' title='' type='HTML' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<a href="#" class="fas fa-rss"></a><a href="#" class="fab fa-vimeo-v"></a><a href="#" class="fab fa-youtube"></a><a href="#" class="fab fa-twitch"></a><a href="#" class="fab fa-steam"></a><a href="#" class="fab fa-tumblr"></a><a href="#" class="fab fa-instagram"></a><a href="#" class="fab fa-twitter"></a><a href="#" class="fab fa-facebook"></a>]]></b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+                <b:include name='widget-title'/>
+                  <div class='widget-content'>
+                    <div class="col-lg">
+                      <div class="social-top">
+                        <data:content/>
+                      </div>
+                    </div>
+                  </div>
+                </b:includable>
+            </b:widget>
+          </b:section>
+      </div>
+    </div>
+    <!-- HEADER -->
+    <b:section id='header' class='header' maxwidgets='1' showaddelement='yes'>
+      <b:widget id='Header1' locked='true' title='DEV-COMICORP (Header)' type='Header'/>
+    </b:section>
+    <!-- MAIN BLOG -->
+    <b:section id='main' class='main' maxwidgets='' showaddelements='yes'>
+      <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'/>
+    </b:section>
+    <!-- SIDEBAR -->
+    <b:section id='sidebar' class='sidebar' maxwidgets='' showaddelements='yes'>
+      <b:widget id='CustomSearch1' locked='false' title='Search' type='CustomSearch'/>      
+    </b:section>
+    <!-- FOOTER -->
+    <b:section id='footer' class='footer' maxwidgets='' showaddelements='yes'>
+      <b:widget id='Attribution1' locked='false' title='' type='Attribution'/>
+    </b:section>
+    <!-- JQUERY -->
+    <script src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous' />
+    <!-- POPPER.JS -->
+    <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous' />
+    <!-- BOOTSTRAP.MIN.JS -->
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous' />
+    <!-- MARQUEE.MIN.JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js' />
+    <!-- LAUNCH.MIN.JS -->
+    <script src='https://combinatronics.com/droidark/comicorp2020/develop/public/javascripts/launch.js' />
+  </body>
+</html>

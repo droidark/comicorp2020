@@ -15,4 +15,6 @@ $(function () {
     };
     const agMarqueeBlock = $('.news');
     agMarqueeBlock.marquee(agMarqueeOptions);
+
+    $('#LinkList1,#HTML1').addClass('col-lg');
 });

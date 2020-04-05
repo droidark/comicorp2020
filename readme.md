@@ -36,3 +36,19 @@
     * https://1.bp.blogspot.com/-N2C3ekEechs/Xoac61d-djI/AAAAAAAABh4/jYFjINUenzUTYtMVVPfLHtAHXqpQYD-GgCLcBGAsYHQ/s1600/demo11.jpg
 * demo12.jpg
     * https://1.bp.blogspot.com/-t9QGquikcRU/Xoac7agYF4I/AAAAAAAABh8/La2BxAYjCfEr4IAjLsPPii8qQ0vANOuTACLcBGAsYHQ/s1600/demo12.jpg
+## BLOGGER IMPORTANT NOTES
+* All tags must be closed
+```html
+<tag></tag> or <tag/>
+```
+## TYPE OF WIDGETS
+https://sites.google.com/site/templateofdoom/Home/blogger-template-widget-tag
+
+## TIPS
+* Mandatory
+    * Section must be followed by widget tags
+        ```html
+        <b:section id='topMenuBar' showaddelement='yes'>            
+            <b:widget/>
+        </b:section>
+        ```

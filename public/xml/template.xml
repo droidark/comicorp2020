@@ -12,13 +12,14 @@
     <script src='https://kit.fontawesome.com/c01b440588.js' crossorigin='anonymous' />
     <!-- COMICORP 2020 CSS -->
     <link rel='stylesheet' href='https://combinatronics.com/droidark/comicorp2020/develop/public/stylesheets/style.css'/>
+    <link rel="icon" href="https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg" sizes="any" type="image/svg+xml" />
     <b:skin><![CDATA[]]></b:skin>
   </head>
   <body>
     <!-- TOP MENU BAR SECTION -->
     <div class='w-100 top-menu-bar'>
       <div class='container'>
-          <b:section id='topMenuBar' class='row' showaddelement='yes'>            
+          <b:section id='topMenuBar' class='row' maxwidgets='2' showaddelement='no'>            
             <b:widget id='LinkList1' locked='true' title='' type='LinkList' version='2' visible='true'>              
               <b:widget-settings>
                 <b:widget-setting name='sorting'>NONE</b:widget-setting>
@@ -50,20 +51,41 @@
                 </div>
               </b:includable>              
             </b:widget>
-            <b:widget id='HTML1' locked='true' title='' type='HTML' visible='true'>
+            <b:widget id='LinkList2' locked='false' title='' type='LinkList' visible='true'>
               <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<a href="#" class="fas fa-rss"></a><a href="#" class="fab fa-vimeo-v"></a><a href="#" class="fab fa-youtube"></a><a href="#" class="fab fa-twitch"></a><a href="#" class="fab fa-steam"></a><a href="#" class="fab fa-tumblr"></a><a href="#" class="fab fa-instagram"></a><a href="#" class="fab fa-twitter"></a><a href="#" class="fab fa-facebook"></a>]]></b:widget-setting>
+                <b:widget-setting name='text-8'>fab fa-facebook</b:widget-setting>
+                <b:widget-setting name='link-7'>#</b:widget-setting>
+                <b:widget-setting name='link-8'>#</b:widget-setting>
+                <b:widget-setting name='link-5'>#</b:widget-setting>
+                <b:widget-setting name='link-6'>#</b:widget-setting>
+                <b:widget-setting name='link-3'>#</b:widget-setting>
+                <b:widget-setting name='link-4'>#</b:widget-setting>
+                <b:widget-setting name='text-1'>fab fa-vimeo-v</b:widget-setting>
+                <b:widget-setting name='text-0'>fas fa-rss</b:widget-setting>
+                <b:widget-setting name='text-3'>fab fa-twitch</b:widget-setting>
+                <b:widget-setting name='text-2'>fab fa-youtube</b:widget-setting>
+                <b:widget-setting name='text-5'>fab fa-tumblr</b:widget-setting>
+                <b:widget-setting name='text-4'>fab fa-steam</b:widget-setting>
+                <b:widget-setting name='text-7'>fab fa-twitter</b:widget-setting>
+                <b:widget-setting name='text-6'>fab fa-instagram</b:widget-setting>
+                <b:widget-setting name='sorting'>NONE</b:widget-setting>
+                <b:widget-setting name='link-1'>#</b:widget-setting>
+                <b:widget-setting name='link-2'>#</b:widget-setting>
+                <b:widget-setting name='link-0'>#</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main'>
                 <b:include name='widget-title'/>
-                  <div class='widget-content'>
-                    <div class="col-lg">
-                      <div class="social-top">
-                        <data:content/>
-                      </div>
-                    </div>
+                <b:include name='content'/>
+              </b:includable>
+              <b:includable id='content'>
+                <div class='widget-content'>
+                  <div class='social-top'>
+                    <b:loop values='data:links' var='link'>
+                      <a expr:class='data:link.name' expr:href='data:link.target'></a>
+                    </b:loop>
                   </div>
-                </b:includable>
+                </div>
+              </b:includable>
             </b:widget>
           </b:section>
       </div>

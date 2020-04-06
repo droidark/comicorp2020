@@ -12,7 +12,7 @@
     <script src='https://kit.fontawesome.com/c01b440588.js' crossorigin='anonymous' />
     <!-- COMICORP 2020 CSS -->
     <link rel='stylesheet' href='https://combinatronics.com/droidark/comicorp2020/develop/public/stylesheets/style.css'/>
-    <link rel="icon" href="https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg" sizes="any" type="image/svg+xml" />
+    <link rel='icon' href='https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg' sizes='any' type='image/svg+xml' />
     <b:skin><![CDATA[]]></b:skin>
   </head>
   <body>
@@ -51,7 +51,7 @@
                 </div>
               </b:includable>              
             </b:widget>
-            <b:widget id='LinkList2' locked='false' title='' type='LinkList' visible='true'>
+            <b:widget id='LinkList2' locked='true' title='' type='LinkList' visible='true'>
               <b:widget-settings>
                 <b:widget-setting name='text-8'>fab fa-facebook</b:widget-setting>
                 <b:widget-setting name='link-7'>#</b:widget-setting>
@@ -92,8 +92,72 @@
     </div>
     <!-- HEADER -->
     <b:section id='header' class='header' maxwidgets='1' showaddelement='yes'>
-      <b:widget id='Header1' locked='true' title='DEV-COMICORP (Header)' type='Header'/>
+      <b:widget id='Header1' locked='true' title='DEV-COMICORP (Header)' type='Header' visible='false'/>
     </b:section>
+    <div class='master-container'>
+      <div class='container angles'></div>
+      <div class='container surf'>
+        <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+          <a class='navbar-brand' href='#'>
+            <img src='https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg' class='d-inline-block align-top logo' alt='' />
+            <data:blog.title.escaped/>
+          </a>
+          <button
+              class='navbar-toggler'
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbarSupportedContent'
+              aria-controls='navbarSupportedContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon'></span>
+          </button>
+          <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul class='navbar-nav mr-auto'>
+              <li class='nav-item active'>
+                <a class='nav-link' href='#'>Home <span class='sr-only'>(current)</span></a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='#'>Link</a>
+              </li>
+              <li class='nav-item dropdown'>
+                <a
+                    class='nav-link dropdown-toggle'
+                    href='#'
+                    id='navbarDropdown'
+                    role='button'
+                    data-toggle='dropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'>Dropdown</a>
+                  <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                    <a class='dropdown-item' href='#'>Action</a>
+                    <a class='dropdown-item' href='#'>Another action</a>
+                    <div class='dropdown-divider'></div>
+                    <a class='dropdown-item' href='#'>Something else here</a>
+                  </div>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link disabled' href='#'>Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- TITLE & BREADCUMBS -->
+      <div class='container'>
+        <div class='row'>
+          <div class='col-xl'>
+            <h1><data:view.description.escaped/></h1>
+          </div>
+        </div>
+        <div class='row'>
+          <ol class='breadcrumb'>
+            <li class='breadcrumb-item active' aria-current='page'>Home</li>
+            <li class='breadcrumb-item' aria-current='page'>Comicorp</li>
+          </ol>            
+        </div>
+      </div>
+    </div>
     <!-- MAIN BLOG -->
     <b:section id='main' class='main' maxwidgets='' showaddelements='yes'>
       <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'/>

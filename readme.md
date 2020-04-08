@@ -52,3 +52,4 @@ https://sites.google.com/site/templateofdoom/Home/blogger-template-widget-tag
             <b:widget/>
         </b:section>
         ```
+* data:blog.pageType INDEX OR ITEM

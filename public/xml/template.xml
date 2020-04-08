@@ -147,29 +147,72 @@
       <div class='container'>
         <div class='row'>
           <div class='col-xl'>
-            <h1><data:view.description.escaped/></h1>
+          <data:view.title.escaped/>
+            <h1>
+              <b:if cond='data:view.title.escaped == "COMICORP"'>
+                <data:view.description.escaped/>
+              <b:else/>
+                <data:view.title.escaped/>
+              </b:if>
+            </h1>
           </div>
         </div>
         <div class='row'>
           <ol class='breadcrumb'>
-            <li class='breadcrumb-item active' aria-current='page'>Home</li>
-            <li class='breadcrumb-item' aria-current='page'>Comicorp</li>
+            <li class='breadcrumb-item' aria-current='page'>Home</li>
+            <li class='breadcrumb-item active' aria-current='page'><data:view.title.escaped/></li>
           </ol>            
         </div>
       </div>
     </div>
+    <!-- NEWS BAR -->
+    <div class='w-100 newsbar'>
+      <div class='container'>
+        <div class='ticker-title'><i class='fa fa-bullhorn'></i>LATEST NEWS</div>
+        <div class='news'>
+          <span class='badge badge-primary'>Adventure</span><a href='#'>Mauris sed urna dui. Aenean consequat non ex eget congue</a>
+          <span class='badge badge-warning'>Strategy</span><a href='#'>Vestibulum ut dignissim tellus</a>
+          <span class='badge badge-success'>Shooters</span><a href='#'>Integer quis orci nisi auguros grantos cibilia lorbos</a>
+          <span class='badge badge-danger'>Comics</span><a href='#'>Mollis leo semper dictum ras ut magna met</a>
+        </div>          
+      </div>
+    </div>
     <!-- MAIN BLOG -->
-    <b:section id='main' class='main' maxwidgets='' showaddelements='yes'>
-      <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'/>
-    </b:section>
-    <!-- SIDEBAR -->
-    <b:section id='sidebar' class='sidebar' maxwidgets='' showaddelements='yes'>
-      <b:widget id='CustomSearch1' locked='false' title='Search' type='CustomSearch'/>      
-    </b:section>
+      <!-- POSTS -->
+      <div class='main'>
+        <div class='container'>
+          <div class='row'>
+            <b:section id='main' class='main col-lg-8' maxwidgets='' showaddelements='yes'>
+              <b:widget id='Blog1' locked='false' title='Entradas del blog' type='Blog' version='2' visible='true'>
+                <b:includable id='main' var='this'>
+                  <!-- IF BLOG INDEX -->
+                  <b:if cond='data:blog.pageType == "index"'>
+                    <div class='title-wrapper'>
+                      <h3 class='widget-title bdr bdr-blue'>Latest news</h3>
+                  </div>
+                  <!-- ELSE SPECIFIC POST -->
+                  <b:else/>
+                    <div class='blog-posts hfeed container'>
+				            <b:loop index='i' values='data:posts' var='post'>
+                      <b:include data='post' name='postCommentsAndAd'/>
+				            </b:loop>
+			            </div>
+                  </b:if>
+                </b:includable>
+              </b:widget>
+            </b:section>
+            <!-- SIDEBAR -->
+            <b:section id='sidebar' class='col-lg-4 sidebar' maxwidgets='' showaddelements='yes'>
+              <b:widget id='CustomSearch1' locked='false' title='Search' type='CustomSearch'/>      
+            </b:section>
+          </div>
+        </div>
+      </div>
     <!-- FOOTER -->
     <b:section id='footer' class='footer' maxwidgets='' showaddelements='yes'>
       <b:widget id='Attribution1' locked='false' title='' type='Attribution'/>
     </b:section>
+    <input id='pageType' name='pageType' type='hidden' expr:value='data:blog.pageType' />
     <!-- JQUERY -->
     <script src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous' />
     <!-- POPPER.JS -->

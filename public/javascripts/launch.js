@@ -189,7 +189,10 @@ $(function () {
 
     // AJAX CALL
     $.ajax({
-        data: {key: config.apiKey}
+        data: {
+            key: config.apiKey,
+            maxResults: config.maxPosts
+        }
     }).done(function(data) {
         for(let i = 0; i < config.maxPosts; i++) {
             post.title = data.items[i].title;

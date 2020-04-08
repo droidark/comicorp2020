@@ -190,6 +190,7 @@
                     <div class='title-wrapper'>
                       <h3 class='widget-title bdr bdr-blue'>Latest news</h3>
                   </div>
+                  <div id='neon'></div>
                   <!-- ELSE SPECIFIC POST -->
                   <b:else/>
                     <div class='blog-posts hfeed container'>
@@ -214,7 +215,7 @@
     </b:section>
     <input id='pageType' name='pageType' type='hidden' expr:value='data:blog.pageType' />
     <!-- JQUERY -->
-    <script src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous' />
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <!-- POPPER.JS -->
     <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous' />
     <!-- BOOTSTRAP.MIN.JS -->

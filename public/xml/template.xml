@@ -92,7 +92,7 @@
     </div>
     <!-- HEADER -->
     <b:section id='header' class='header' maxwidgets='1' showaddelement='yes'>
-      <b:widget id='Header1' locked='true' title='DEV-COMICORP (Header)' type='Header' visible='false'/>
+      <b:widget id='Header1' locked='true' title='DEV-COMICORP (Header)' type='Header' visible='false' mobile='no'/>
     </b:section>
     <div class='master-container'>
       <div class='container angles'></div>
@@ -147,7 +147,6 @@
       <div class='container'>
         <div class='row'>
           <div class='col-xl'>
-          <data:view.title.escaped/>
             <h1>
               <b:if cond='data:view.title.escaped == "COMICORP"'>
                 <data:view.description.escaped/>
@@ -182,7 +181,7 @@
       <div class='main'>
         <div class='container'>
           <div class='row'>
-            <b:section id='main' class='main col-lg-8' maxwidgets='' showaddelements='yes'>
+            <b:section id='main' class='col-lg-8' maxwidgets='' showaddelements='yes'>
               <b:widget id='Blog1' locked='false' title='Entradas del blog' type='Blog' version='2' visible='true'>
                 <b:includable id='main' var='this'>
                   <!-- IF BLOG INDEX -->
@@ -204,7 +203,32 @@
             </b:section>
             <!-- SIDEBAR -->
             <b:section id='sidebar' class='col-lg-4 sidebar' maxwidgets='' showaddelements='yes'>
-              <b:widget id='CustomSearch1' locked='false' title='Search' type='CustomSearch'/>      
+              <b:widget id='HTML1' locked='false' title='REDES SOCIALES' type='HTML' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'><![CDATA[<div class='row soc-icons'><a class='soc-icons-twitter' href='#' data-toggle='tooltip' data-original-title='Twitter'><i class='fab fa-twitter'></i></a><a class='soc-icons-facebook' href='#' data-toggle='tooltip' data-original-title='Facebook'><i class='fab fa-facebook-f'></i></a><a class='soc-icons-instagram' href='#' data-toggle='tooltip' data-original-title='Instagram'><i class='fab fa-instagram'></i></a><a class='soc-icons-youtube' href='#' data-toggle='tooltip' data-original-title='YouTube'><i class='fab fa-youtube'></i></a><a class='soc-icons-dailymotion' href='#' data-toggle='tooltip' data-original-title='Dailymotion'><i class='fab fa-dailymotion'></i></a><a class='soc-icons-twitch' href='#' data-toggle='tooltip' data-original-title='Twitch'><i class='fab fa-twitch'></i></a><a class='soc-icons-spotify' href='#' data-toggle='tooltip' data-original-title='Spotify'><i class='fab fa-spotify'></i></a><a class='soc-icons-snapchat' href='#' data-toggle='tooltip' data-original-title='Snapchat'><i class='fab fa-snapchat-ghost'></i></a><a class='soc-icons-vimeo' href='#' data-toggle='tooltip' data-original-title='Vimeo'><i class='fab fa-vimeo-v'></i></a><a class='soc-icons-rss' href='#' data-toggle='tooltip' data-original-title='RSS'><i class='fas fa-rss'></i></a></div>]]></b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <div class='title-wrapper'>
+                    <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
+                  </div>                  
+                  <div class='widget-content container clear px-0'>
+                    <data:content/>
+                  </div>
+                </b:includable>
+              </b:widget>
+              <b:widget id='HTML2' locked='false' title='CINE BARATO' type='HTML' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'><![CDATA[<iframe src="https://www.youtube.com/embed/esVhAAANKEQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <div class='title-wrapper'>
+                    <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
+                  </div> 
+                  <div class='widget-content container clear video-responsive'>
+                    <data:content/>
+                  </div>
+                </b:includable>
+              </b:widget>
             </b:section>
           </div>
         </div>

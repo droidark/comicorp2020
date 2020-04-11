@@ -167,7 +167,7 @@
     <!-- NEWS BAR -->
     <div class='w-100 newsbar'>
       <div class='container'>
-        <div class='ticker-title'><i class='fa fa-bullhorn'></i>LATEST NEWS</div>
+        <div class='ticker-title'><i class='fa fa-bullhorn'></i>NOTICIAS</div>
         <div class='news'>
           <span class='badge badge-primary'>Adventure</span><a href='#'>Mauris sed urna dui. Aenean consequat non ex eget congue</a>
           <span class='badge badge-warning'>Strategy</span><a href='#'>Vestibulum ut dignissim tellus</a>
@@ -205,14 +205,16 @@
             <b:section id='sidebar' class='col-lg-4 sidebar' maxwidgets='' showaddelements='yes'>
               <b:widget id='HTML1' locked='false' title='REDES SOCIALES' type='HTML' visible='true'>
                 <b:widget-settings>
-                  <b:widget-setting name='content'><![CDATA[<div class='row soc-icons'><a class='soc-icons-twitter' href='#' data-toggle='tooltip' data-original-title='Twitter'><i class='fab fa-twitter'></i></a><a class='soc-icons-facebook' href='#' data-toggle='tooltip' data-original-title='Facebook'><i class='fab fa-facebook-f'></i></a><a class='soc-icons-instagram' href='#' data-toggle='tooltip' data-original-title='Instagram'><i class='fab fa-instagram'></i></a><a class='soc-icons-youtube' href='#' data-toggle='tooltip' data-original-title='YouTube'><i class='fab fa-youtube'></i></a><a class='soc-icons-dailymotion' href='#' data-toggle='tooltip' data-original-title='Dailymotion'><i class='fab fa-dailymotion'></i></a><a class='soc-icons-twitch' href='#' data-toggle='tooltip' data-original-title='Twitch'><i class='fab fa-twitch'></i></a><a class='soc-icons-spotify' href='#' data-toggle='tooltip' data-original-title='Spotify'><i class='fab fa-spotify'></i></a><a class='soc-icons-snapchat' href='#' data-toggle='tooltip' data-original-title='Snapchat'><i class='fab fa-snapchat-ghost'></i></a><a class='soc-icons-vimeo' href='#' data-toggle='tooltip' data-original-title='Vimeo'><i class='fab fa-vimeo-v'></i></a><a class='soc-icons-rss' href='#' data-toggle='tooltip' data-original-title='RSS'><i class='fas fa-rss'></i></a></div>]]></b:widget-setting>
+                  <b:widget-setting name='content'><![CDATA[<a class='soc-icons-twitter' href='https://twitter.com/comicorp' data-toggle='tooltip' data-original-title='Twitter'><i class='fab fa-twitter'/></a><a class='soc-icons-facebook' href='https://www.facebook.com/comicorp' data-toggle='tooltip' data-original-title='Facebook'><i class='fab fa-facebook-f'/></a><a class='soc-icons-instagram' href='https://instagram.com/comicorp/' data-toggle='tooltip' data-original-title='Instagram'><i class='fab fa-instagram'/></a><a class='soc-icons-youtube' href='https://www.youtube.com/channel/UCu9kQTr2ITsbg09_xfK7Aig' data-toggle='tooltip' data-original-title='YouTube'><i class='fab fa-youtube'/></a><a class='soc-icons-dailymotion' href='https://www.dailymotion.com/comicorp' data-toggle='tooltip' data-original-title='Dailymotion'><i class='fab fa-dailymotion'/></a><a class='soc-icons-twitch' href='https://www.twitch.tv/comicorp' data-toggle='tooltip' data-original-title='Twitch'><i class='fab fa-twitch'/></a><a class='soc-icons-spotify' href='https://www.spotify.com' data-toggle='tooltip' data-original-title='Spotify'><i class='fab fa-spotify'/></a><a class='soc-icons-snapchat' href='https://www.snapchat.com' data-toggle='tooltip' data-original-title='Snapchat'><i class='fab fa-snapchat-ghost'/></a><a class='soc-icons-vimeo' href='https://vimeo.com/comicorp' data-toggle='tooltip' data-original-title='Vimeo'><i class='fab fa-vimeo-v'/></a><a class='soc-icons-rss' href='https://comicorp.blogspot.com/feeds/posts/default?alt=rss' data-toggle='tooltip' data-original-title='RSS'><i class='fas fa-rss'/></a>]]></b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
                   <div class='title-wrapper'>
                     <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
                   </div>                  
                   <div class='widget-content container clear px-0'>
-                    <data:content/>
+                    <div class='row soc-icons'>
+                      <data:content/>
+                    </div>
                   </div>
                 </b:includable>
               </b:widget>
@@ -226,6 +228,21 @@
                   </div> 
                   <div class='widget-content container clear video-responsive'>
                     <data:content/>
+                  </div>
+                </b:includable>
+              </b:widget>
+              <b:widget id='HTML3' locked='false' title='ÚLTIMAS ENTRADAS' type='HTML' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'><![CDATA[]]></b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <div class='title-wrapper'>
+                    <h3 class="widget-title bdr bdr-blue"><data:title/></h3>
+                  </div>
+                  <div class='widget-content'>
+                    <div id='latestsPosts' class='container uberlangerung px-0 clear'>
+                      <data:content/>
+                    </div>
                   </div>
                 </b:includable>
               </b:widget>

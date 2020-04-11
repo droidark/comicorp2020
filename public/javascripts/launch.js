@@ -80,10 +80,10 @@ const util = {
         let text = $(data).text();
         return text.length > 1 ?
             text
-            .replace(regex, ' ')
             .trim()
             .substring(0, length)
-            .substring(0, text.lastIndexOf(" ")) : title;
+            .substring(0, text.lastIndexOf(' '))
+            .replace(regex, ' ') : title;
     },
     getStars: (data) => {
         const c = $.parseHTML(data);
@@ -139,6 +139,22 @@ const util = {
             .append($('<i>', {text: '|'}))
             .append(post.date);
         $('#neon').append($.postInfo);
+    },
+    buildLatestPosts: (post) => {
+        $.calendar = $('<i>', {class: 'fas fa-calendar'});
+        $.cardText = $('<small>', {class: 'card-text text-white'})
+            .append($.calendar)
+            .append(post.date);
+        $.link = $('<a>', {href: post.link, text: post.title});
+        $.cardTitle = $('<h5>', {class: 'card-title'})
+            .append($.link);
+        $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
+            .append($,cardTitle);
+        $.cardImg = $('<img>', {class: 'card-img', src: post.thumb, alt: post.title});
+        $.card = $('<div>', {class: 'card rounded-0'})
+            .append($.cardImg)
+            .append($.cardImgOverlay);
+        $('#latestsPosts').append($.card);
     }
 }
 const agMarqueeOptions = {
@@ -205,6 +221,9 @@ $(function () {
             post.labels = data.items[i].labels;
             util.buildPost(post);
             util.buildPostInfo(post);
+            if(i < 5) {
+                util.buildLatestPosts(post);
+            }
         }
     });
 });

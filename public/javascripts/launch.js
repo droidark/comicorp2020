@@ -149,7 +149,7 @@ const util = {
         $.cardTitle = $('<h5>', {class: 'card-title'})
             .append($.link);
         $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
-            .append($,cardTitle);
+            .append($.cardTitle);
         $.cardImg = $('<img>', {class: 'card-img', src: post.thumb, alt: post.title});
         $.card = $('<div>', {class: 'card rounded-0'})
             .append($.cardImg)

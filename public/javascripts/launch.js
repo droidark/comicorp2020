@@ -147,6 +147,7 @@ const util = {
             .append(post.date);
         $.link = $('<a>', {href: post.link, text: post.title});
         $.cardTitle = $('<h5>', {class: 'card-title'})
+            .append($.cardText)
             .append($.link);
         $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
             .append($.cardTitle);

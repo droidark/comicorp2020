@@ -16,46 +16,28 @@ const authors = {
     }
 };
 const colors = [ 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
-const buildStar = {
-    build: (stars, farbe) => {
-        let average, sum = 0, c = 0;
-        $.postReview = $('<div>', {class: 'post-review'});
-        $.overall = $('<div>', {class: 'overall-score ' + farbe});
-        $.ul = $('<ul>');
-        for (const prop in stars) {
-            if(prop != 'color') {
-                if(stars[prop] < 0) {
-                    sum += 0;
-                } else if (stars[prop] > 5) {
-                    sum += 5;
-                } else {
-                    sum += stars[prop];
-                }
-                $.span = $('<span>', {class: 'score ' + farbe});
-                for(let i = 0; i < 5; i++) {
-                    clazz = i < stars[prop] ? 'fas fa-star' : 'far fa-star';
-                    $.i = $('<i>', {class: clazz});
-                    $.span.append($.i);
-                }
-                $.li = $('<li>', {text: prop});
-                $.li.append($.span);
-                $.ul.append($.li);
-                c++;
+
+const util = {
+    getAuthor: (author) => {
+        if(authors[author.id] == undefined) {
+            return {
+                name: author.displayName,
+                avatar: author.image.url,
+                link: author.url
             }
         }
-        average = sum / c;
-        for(let i = 0; i < 5; i++) {
-            clazz = i < average ? 'fas fa-star' : 'far fa-star';
-            $.i = $('<i>', {class: clazz});
-            $.overall.append($.i);
-        }
-        $.postReview.append($.overall);
-        $.postReview.append($.ul);
-        return $.postReview;
-    }
-}
-const util = {
-    dateTransform: (date) => {
+        return authors[author.id];
+    },
+    getColor: (score) => {
+        return score == null
+            ? colors[(Math.floor(Math.random() * 7))]
+            : score.color == null 
+                ? colors[(Math.floor(Math.random() * 7))]
+                : colors.find(e => e == score.color) != undefined
+                    ? score.color
+                    : colors[(Math.floor(Math.random() * 7))];
+    },
+    getDate: (date) => {
         const d = new Date(date);
         const ye = new Intl.DateTimeFormat('mx-ES', { year: 'numeric' }).format(d)
         const mo = new Intl.DateTimeFormat('mx-ES', { month: 'short' }).format(d)
@@ -74,32 +56,90 @@ const util = {
         while ( c < 0);
         return img;
     },
-    formatText: (data, title) => {
-        const length = 440;
-        const regex = /(\r\n|\n|\r)/gm;
-        let text = $(data).text();
-        return text.length > 1 ?
-            text
-            .trim()
-            .substring(0, length)
-            .substring(0, text.lastIndexOf(' '))
-            .replace(regex, ' ') : title;
-    },
-    getStars: (data) => {
+    getScore: (data) => {
+        const min = 0, max = 5;
         const c = $.parseHTML(data);
-        const a = $(c).filter('#romdeau').attr('stars');
+        const a = $(c).filter('#score').attr('score');
         if(a != undefined) {
-            return JSON.parse(a);
+            let score = JSON.parse(a);
+            score['average'] = 0;
+            for (const criteria in score) {
+                if(criteria != 'color' && criteria != 'average') {
+                    if(score[criteria] < min) {
+                        score['average'] += min;
+                    } else if(score[criteria] > max) {
+                        score['average'] += max;
+                    } else {
+                        score['average'] += score[criteria];
+                    }
+                }
+            }
+            score['average'] = Math.floor(score['average'] / ((Object.keys(score).length) - 2));
+            return score;
         }
         return null;
     },
-    buildPost: (post) => {
-        const farbe = (post.stars == null || post.stars.color == null || post.stars.color == undefined) 
-            ? colors[(Math.floor(Math.random() * 7))] 
-            : post.stars.color;
-            var x = null;
-        if(post.stars != null) {
-            x = buildStar.build(post.stars, farbe);
+    getText: (data, title) => {
+        const length = 500;
+        const regex = /(\r\n|\n|\r)/gm;
+        let text = $(data).text();
+        if(text.length > 1) {
+            text = text.trim()
+                .replace(regex, ' ')
+                .substring(0, length)
+                .trim();
+            return text.substring(0, text.lastIndexOf(' '));
+        }
+        return title;
+    }
+};
+
+const buildScore = {
+    complete: (score, farbe) => {
+        const max = 5;
+        let clase = '';
+        $.postReview = $('<div>', {class: 'post-review'});
+        $.overall = $('<div>', {class: 'overall-score ' + farbe});
+        $.ul = $('<ul>');
+        for (const criteria in score) {
+            if(criteria != 'color' && criteria != 'average') {
+                $.span = $('<span>', {class: 'score ' + farbe});
+                for(let i = 0; i < max; i++) {
+                    clase = i < score[criteria] ? 'fas fa-star' : 'far fa-star';
+                    $.i = $('<i>', {class: clase});
+                    $.span.append($.i);
+                }
+                $.li = $('<li>', {text: criteria});
+                $.li.append($.span);
+                $.ul.append($.li);                
+            }
+        }
+        $.postReview
+            .append(buildScore.simple(score['average'], 'overall-score', farbe))
+            .append($.ul);
+        return $.postReview;
+    },
+    simple: (average, classes, farbe) => {
+        const max = 5;
+        let clase = '';
+        $.container = $('<div>', {class: classes + ' ' + farbe});
+        for(let i = 0; i < max; i++) {
+            clase = i < average ? 'fas fa-star' : 'far fa-star';
+            $.i = $('<i>', {class: clase});
+            $.container.append($.i);
+        }
+        return $.container;
+    }
+}
+
+const build = {
+    post: (post) => {
+        const farbe = (post.score == null || post.score.color == null || post.score.color == undefined) 
+            ? colors[(Math.floor(Math.random() * 7))]
+            : post.score.color;
+            var score = null;
+        if(post.score != null) {
+            score = buildScore.complete(post.score, farbe);
         }
         $.cardTitleLink = $('<a>', {href: post.link, text: post.title});
         $.cardTitle = $('<h2>', {class: 'card-title'}).append($.cardTitleLink);
@@ -107,7 +147,7 @@ const util = {
         $.readMore = $('<a>', {class: 'btn btn-outline-primary read-more', href: post.link, text: config.readMore});
         $.cardBody = $('<div>', {class: 'card-body'})
             .append($.cardTitle)
-            .append(x)
+            .append(score)
             .append($.cardText)
             .append($.readMore);
         $.lineEffect = $('<span>', {class: 'line_effect bg-' + farbe});
@@ -120,7 +160,7 @@ const util = {
             .append($.cardBody);
         $('#neon').append($.card);
     },
-    buildPostInfo: (post) => {
+    postInfo: (post) => {
         $.postInfo = $('<div>', {class: 'post-pinfo'});
         $.userLink = $('<a>', {
             href: post.author.link,
@@ -129,7 +169,7 @@ const util = {
         });
         $.userImage = $('<img>', {src: post.author.avatar, alt: post.author.name});
         $.userLink.append($.userImage).append(config.by + post.author.name);
-        $.labelLink = $('<a>', {href: config.searchLabel + post.labels[0], text: post.labels[0]})
+        $.labelLink = $('<a>', {href: config.searchLabel() + post.labels[0], text: post.labels[0]})
         $.postInfo
             .append($.userLink)
             .append($('<i>', {text: '|'}))
@@ -140,7 +180,7 @@ const util = {
             .append(post.date);
         $('#neon').append($.postInfo);
     },
-    buildLatestPosts: (post) => {
+    latestPosts: (post) => {
         $.calendar = $('<i>', {class: 'fas fa-calendar'});
         $.cardText = $('<small>', {class: 'card-text text-white'})
             .append($.calendar)
@@ -173,11 +213,14 @@ const config = {
     blogUrl: 'https://comicorp.blogspot.com/',
     apiKey: 'AIzaSyB196dzzuDelvNzKTtteDF-Z4T-1pBDZbg',
     maxPosts: 7,
+    fields: 'nextPageToken,items(published,url,title,content,author,labels)',
     afterText: '...',
-    readMore: 'Leer Más',
+    readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
     by: 'por ',
-    searchLabel: 'https://comicorp.blogspot.com/search/label/'
+    searchLabel: () => {
+       return config.blogUrl + 'search/label/';
+    }
 }
 let post = {
     title: '',
@@ -185,10 +228,12 @@ let post = {
     link: '',
     thumb: '',
     date: '',
-    stars: {},
+    color: '',
+    score: {},
     author: {},
     labels: []
 }
+
 $.ajaxSetup({
     url: config.resource + config.blogId + '/posts',
     dataType: 'json'
@@ -208,22 +253,24 @@ $(function () {
     $.ajax({
         data: {
             key: config.apiKey,
-            maxResults: config.maxPosts
+            maxResults: config.maxPosts,
+            fields: config.fields
         }
     }).done(function(data) {
         for(let i = 0; i < config.maxPosts; i++) {
             post.title = data.items[i].title;
             post.link = data.items[i].url;
-            post.date = util.dateTransform(data.items[i].published);
+            post.date = util.getDate(data.items[i].published);
             post.thumb = util.getFirstImage(data.items[i].content);
-            post.text = util.formatText(data.items[i].content, data.items[i].title);
-            post.author = authors[data.items[i].author.id];
-            post.stars = util.getStars(data.items[i].content);
-            post.labels = data.items[i].labels;
-            util.buildPost(post);
-            util.buildPostInfo(post);
+            post.text = util.getText(data.items[i].content, data.items[i].title);
+            post.author = util.getAuthor(data.items[i].author);
+            post.score = util.getScore(data.items[i].content);
+            post.color = util.getColor(post.score);
+            post.labels = data.items[i].labels;            
+            build.post(post);
+            build.postInfo(post);
             if(i < 5) {
-                util.buildLatestPosts(post);
+                build.latestPosts(post);
             }
         }
     });

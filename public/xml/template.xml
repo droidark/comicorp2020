@@ -98,7 +98,7 @@
       <div class='container angles'></div>
       <div class='container surf'>
         <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-          <a class='navbar-brand' href='#'>
+          <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
             <img src='https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg' class='d-inline-block align-top logo' alt='' />
             <data:blog.title.escaped/>
           </a>
@@ -251,9 +251,93 @@
         </div>
       </div>
     <!-- FOOTER -->
-    <b:section id='footer' class='footer' maxwidgets='' showaddelements='yes'>
-      <b:widget id='Attribution1' locked='false' title='' type='Attribution'/>
-    </b:section>
+    <footer class='w-100 footer'>
+      <div class='container'>
+        <div class='row'>
+          <b:section id='footer' class='col-lg-4' maxwidgets='' showaddelements='yes'>
+          </b:section>
+          <b:section id='footer2' class='col-lg-4' maxwidgets='' showaddelements='yes'>
+          </b:section>
+          <b:section id='footer3' class='col-lg-4' maxwidgets='' showaddelements='yes'>
+            <b:widget id='ContactForm1' locked='false' title='Contacto' type='ContactForm' visible='true'>
+              <b:includable id='main'>
+                <div class='title-wrapper title-wrapper-dunkel'>
+                  <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
+                </div> 
+                <b:include name='content'/>
+              </b:includable>
+              <b:includable id='content'>
+                <div class='contact-form-widget'>
+                  <div class='form'>
+                    <form name='contact-form'>
+                      <div class='form-group'>
+                        <label class='text-light' expr:for='data:widget.instanceId + &quot;_contact-form-name&quot;'><data:contactFormNameMsg/><b>*</b></label>
+                        <input type='text' class='contact-form-name form-control rounded-0' expr:id='data:widget.instanceId + &quot;_contact-form-name&quot;' name='name' size='30' />
+                      </div>
+                      <div class='form-group'>
+                        <label class='text-light' expr:for='data:widget.instanceId + &quot;_contact-form-email&quot;'><data:contactFormEmailMsg/><b>*</b></label>
+                        <input type='text' class='contact-form-email form-control rounded-0' expr:id='data:widget.instanceId + &quot;_contact-form-email&quot;' name='email' size='30' />
+                      </div>
+                      <div class='form-group'>
+                        <label class='text-light' expr:id='data:widget.instanceId + &quot;_contact-form-email-message&quot;'><data:contactFormMessageMsg/></label>
+                        <textarea class='contact-form-email-message form-control rounded-0' cols='25' expr:id='data:widget.instanceId + &quot;_contact-form-email-message&quot;' name='email-message' rows='5'/>
+                      </div>
+                      <button class='contact-form-button contact-form-button-submit btn text-white bg-blue rounded-0' expr:id='data:widget.instanceId + &quot;_contact-form-submit&quot;'><data:contactFormSendMsg/></button>
+                    </form>
+                  </div>
+                </div>
+              </b:includable>
+            </b:widget>
+          </b:section>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER MENU -->
+    <div class='w-100 antarctica'>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-lg'>
+            <i class='fab fa-creative-commons'></i><a class='brand' expr:href='data:blog.homepageUrl'>comicorp</a><span id='year'></span> | This work is licensed under a Creative Commons Attribution 4.0 International License.
+          </div>
+            <b:section id='footerMenu' class='col-lg' maxwidgets='1' showaddelements='no'>
+              <b:widget id='LinkList3' locked='yes' title='' type='LinkList' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='text-8'>fab fa-facebook bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='link-7'>https://twitter.com/comicorp</b:widget-setting>
+                  <b:widget-setting name='link-8'>https://www.facebook.com/comicorp</b:widget-setting>
+                  <b:widget-setting name='link-5'>https://comicorp.tumblr.com</b:widget-setting>
+                  <b:widget-setting name='link-6'>https://www.instagram.com/comicorp</b:widget-setting>
+                  <b:widget-setting name='link-3'>https://www.twitch.tv/comicorp</b:widget-setting>
+                  <b:widget-setting name='link-4'>https://store.steampowered.com/</b:widget-setting>
+                  <b:widget-setting name='text-1'>fab fa-vimeo-v bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-0'>fas fa-rss bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-3'>fab fa-twitch bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-2'>fab fa-youtube bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-5'>fab fa-tumblr bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-4'>fab fa-steam bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-7'>fab fa-twitter bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='text-6'>fab fa-instagram bg-transparent border-0</b:widget-setting>
+                  <b:widget-setting name='sorting'>NONE</b:widget-setting>
+                  <b:widget-setting name='link-1'>http://vimeo.com/comicorp</b:widget-setting>
+                  <b:widget-setting name='link-2'>https://www.youtube.com/channel/UCu9kQTr2ITsbg09_xfK7Aig</b:widget-setting>
+                  <b:widget-setting name='link-0'>https://comicorp.blogspot.com/feeds/posts/default?alt=rss</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <b:include name='widget-title'/>
+                  <b:include name='content'/>
+                </b:includable>
+                <b:includable id='content'>
+                  <div class='widget-content social-top'>
+                    <b:loop values='data:links' var='link'>
+                      <a expr:class='data:link.name' expr:href='data:link.target'></a>
+                    </b:loop>
+                  </div>
+                </b:includable>
+              </b:widget>
+            </b:section>
+        </div>
+      </div>
+    </div>
     <input id='pageType' name='pageType' type='hidden' expr:value='data:blog.pageType' />
     <!-- JQUERY -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>

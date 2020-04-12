@@ -212,7 +212,7 @@ const config = {
     blogId: '3232378657111313592',
     blogUrl: 'https://comicorp.blogspot.com/',
     apiKey: 'AIzaSyB196dzzuDelvNzKTtteDF-Z4T-1pBDZbg',
-    maxPosts: 7,
+    maxPosts: 5,
     fields: 'nextPageToken,items(published,url,title,content,author,labels)',
     afterText: '...',
     readMore: 'Leer M\u00E1s',
@@ -269,9 +269,7 @@ $(function () {
             post.labels = data.items[i].labels;            
             build.post(post);
             build.postInfo(post);
-            if(i < 5) {
-                build.latestPosts(post);
-            }
+            build.latestPosts(post);
         }
     });
 });

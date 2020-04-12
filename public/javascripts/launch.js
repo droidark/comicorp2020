@@ -190,7 +190,8 @@ const build = {
             .append($.link);
         $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
             .append($.cardText)
-            .append($.cardTitle);
+            .append($.cardTitle)
+            .append(buildScore.simple(post.score.average, 'card-text', post.color));
         $.cardImg = $('<img>', {class: 'card-img', src: post.thumb, alt: post.title});
         $.card = $('<div>', {class: 'card rounded-0'})
             .append($.cardImg)

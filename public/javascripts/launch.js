@@ -134,23 +134,18 @@ const buildScore = {
 
 const build = {
     post: (post) => {
-        const farbe = (post.score == null || post.score.color == null || post.score.color == undefined) 
-            ? colors[(Math.floor(Math.random() * 7))]
-            : post.score.color;
-            var score = null;
-        if(post.score != null) {
-            score = buildScore.complete(post.score, farbe);
-        }
         $.cardTitleLink = $('<a>', {href: post.link, text: post.title});
         $.cardTitle = $('<h2>', {class: 'card-title'}).append($.cardTitleLink);
         $.cardText = $('<p>', {class: 'card-text', text: post.text + config.afterText});
         $.readMore = $('<a>', {class: 'btn btn-outline-primary read-more', href: post.link, text: config.readMore});
-        $.cardBody = $('<div>', {class: 'card-body'})
-            .append($.cardTitle)
-            .append(score)
+        $.cardBody = $('<div>', {class: 'card-body'}).append($.cardTitle);
+        if(post.score != null) {
+            $.cardBody.append(buildScore.complete(post.score, post.color));
+        }
+        $.cardBody
             .append($.cardText)
             .append($.readMore);
-        $.lineEffect = $('<span>', {class: 'line_effect bg-' + farbe});
+        $.lineEffect = $('<span>', {class: 'line_effect bg-' + post.color});
         $.cardImage = $('<img>', {class: 'card-img-top', src: post.thumb, alt: post.title});
         $.cardLinkTop = $('<a>', {class: 'card-link-top', href: post.link})
             .append($.cardImage);
@@ -168,7 +163,9 @@ const build = {
             'data-toggle': 'tooltip'            
         });
         $.userImage = $('<img>', {src: post.author.avatar, alt: post.author.name});
-        $.userLink.append($.userImage).append(config.by + post.author.name);
+        $.userLink
+            .append($.userImage)
+            .append(config.by + post.author.name);
         $.labelLink = $('<a>', {href: config.searchLabel() + post.labels[0], text: post.labels[0]})
         $.postInfo
             .append($.userLink)

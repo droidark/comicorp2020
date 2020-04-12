@@ -39,6 +39,10 @@
         max-width: 100%;
         margin-bottom: 1rem;
     }
+    .post-review {
+        width: 100%;
+        margin: 0 0 2rem;
+    }
     .video-container {
         position:relative;
         padding-bottom:56.25%;
@@ -46,6 +50,7 @@
         height:0;
         overflow:hidden;
         margin-bottom: 1rem;
+        clear: both;
     }    
     .video-container iframe, .video-container object, .video-container embed {
         position:absolute;

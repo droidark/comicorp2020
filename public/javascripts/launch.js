@@ -178,7 +178,6 @@ const build = {
         $('#neon').append($.postInfo);
     },
     latestPosts: (post) => {
-        console.log(post);
         $.calendar = $('<i>', {class: 'fas fa-calendar'});
         $.cardText = $('<small>', {class: 'card-text text-white'})
             .append($.calendar)

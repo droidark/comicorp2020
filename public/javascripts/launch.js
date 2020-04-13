@@ -2,17 +2,20 @@ const authors = {
     '06925015531546749535': {
         name: 'Erre Erregon',
         avatar: 'https://yt3.ggpht.com/a/AATXAJxxoUr5OqGoMLqJeqTNTG4P50s24DbRn510yA=s88-c-k-c0x00ffffff-no-rj',
-        link: 'http://orgullogeekr.blogspot.com'
+        link: 'http://orgullogeekr.blogspot.com',
+        about: 'Un pobre diablo que habla sobre películas que ve en el cine cuando el boleto le sale con descuento, en otras palabras: habla de Cine Barato.'
     },
     '16663121220987503262': {
         name: 'Fozz',
         avatar: 'https://pbs.twimg.com/profile_images/1234328437688610817/ABIndXV3_200x200.jpg',
-        link: 'http://marvelmx.blogspot.com'
+        link: 'http://marvelmx.blogspot.com',
+        about: 'Unico sobreviviente de este blog, desde 2009.'
     },
     '07861633488260418247': {
         name: 'Eduflas',
         avatar: 'https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_200x200.jpg',
-        link: 'https://twitter.com/eduflass'
+        link: 'https://twitter.com/eduflass',
+        about: 'Elemento lento, torpe y débil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
     }
 };
 const colors = [ 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
@@ -23,7 +26,8 @@ const util = {
             return {
                 name: author.displayName,
                 avatar: author.image.url,
-                link: author.url
+                link: author.url,
+                about: 'Nada que decir por el momento'
             }
         }
         return authors[author.id];
@@ -213,7 +217,9 @@ const config = {
     blogUrl: 'https://comicorp.blogspot.com/',
     apiKey: 'AIzaSyB196dzzuDelvNzKTtteDF-Z4T-1pBDZbg',
     maxPosts: 5,
-    fields: 'nextPageToken,items(published,url,title,content,author,labels)',
+    indexCallFields: 'nextPageToken,items(published,url,title,content,author,labels)',
+    latestPostsCallFields: 'items(published,url,content,title)',
+    singlePostCallFields: 'author,content',
     afterText: '...',
     readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
@@ -236,9 +242,14 @@ let post = {
 
 $.ajaxSetup({
     url: config.resource + config.blogId + '/posts',
-    dataType: 'json'
+    dataType: 'json',
+    data: {
+        key: config.apiKey,
+    }
 });
-$(function () {
+
+// START PROCESS
+$(() => {
     // YEAR
     $('#year').text(new Date().getFullYear());
     // TOGGLETIPS
@@ -249,27 +260,65 @@ $(function () {
 
     $('#LinkList1,#LinkList2').addClass('col-lg');
 
-    // AJAX CALL
-    $.ajax({
-        data: {
-            key: config.apiKey,
-            maxResults: config.maxPosts,
-            fields: config.fields
-        }
-    }).done(function(data) {
-        for(let i = 0; i < config.maxPosts; i++) {
-            post.title = data.items[i].title;
-            post.link = data.items[i].url;
-            post.date = util.getDate(data.items[i].published);
-            post.thumb = util.getFirstImage(data.items[i].content);
-            post.text = util.getText(data.items[i].content, data.items[i].title);
-            post.author = util.getAuthor(data.items[i].author);
-            post.score = util.getScore(data.items[i].content);
-            post.color = util.getColor(post.score);
-            post.labels = data.items[i].labels;            
-            build.post(post);
-            build.postInfo(post);
-            build.latestPosts(post);
-        }
-    });
+    const pageType = $('#pageType').val();
+    // INDEX
+    if(pageType == 'index') {
+        $.ajax({
+            data: {
+                maxResults: config.maxPosts,
+                fields: config.indexCallFields
+            }
+        }).done(function(data) {
+            for(let i = 0; i < config.maxPosts; i++) {
+                post.title = data.items[i].title;
+                post.link = data.items[i].url;
+                post.date = util.getDate(data.items[i].published);
+                post.thumb = util.getFirstImage(data.items[i].content);
+                post.text = util.getText(data.items[i].content, data.items[i].title);
+                post.author = util.getAuthor(data.items[i].author);
+                post.score = util.getScore(data.items[i].content);
+                post.color = util.getColor(post.score);
+                post.labels = data.items[i].labels;            
+                build.post(post);
+                build.postInfo(post);
+                build.latestPosts(post);
+            }
+        });
+    } else if(pageType == 'item') {
+        // const postId = $('#postId').val();
+        const postId = '6050739072749113654';
+        // LATEST POST
+        $.ajax({
+            data: {
+                maxResults: config.maxPosts,
+                fields: config.latestPostsCallFields
+            }
+        }).done((data) => {
+            for(let i = 0; i < config.maxPosts; i++) {
+                post.title = data.items[i].title;
+                post.link = data.items[i].url;
+                post.date = util.getDate(data.items[i].published);
+                post.thumb = util.getFirstImage(data.items[i].content);
+                post.score = util.getScore(data.items[i].content);
+                post.color = util.getColor(post.score);
+                build.latestPosts(post);
+            }
+        });
+        // AUTHOR INFORMATION
+        $.ajax({
+            url: config.resource + config.blogId + '/posts/' + postId,
+            data: {
+                fields: config.singlePostCallFields
+            }
+        }).done((data) => {
+            post.author = util.getAuthor(data.author);
+            if($('#score').length) {
+                post.score = util.getScore(data.content);
+                post.color = util.getColor(data.content);
+                $('#score')
+                    .addClass('post-review')
+                    .append(buildScore.complete(post.score, score.color));
+            }
+        });
+    }
 });

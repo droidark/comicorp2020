@@ -531,6 +531,9 @@
                       <b:include data='post' name='postJumpLink'/>
                     </b:if>
                     <b:include data='post' name='postFooter'/>
+                    <b:if cond='data:blog.pageType == "item"'>
+                      <input type='hidden' id='postId' name='postId' expr:value='data:post.id'/>
+                    </b:if>
                   </div>
                 </b:includable>
                 <b:includable id='postBody' var='post'>
@@ -540,7 +543,7 @@
                       <data:post.author.name/></a><i>|</i><data:post.date/>
                   </div>
                   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
-                    <data:post.body/>
+                    <data:post.body/>                    
                   </div>
                 </b:includable>
                 <b:includable id='postBodySnippet' var='post'>
@@ -809,7 +812,7 @@
         </div>
       </div>
     </div>
-    <input expr:value='data:blog.pageType' id='pageType' name='pageType' type='hidden'/>
+    <input type='hidden' id='pageType' name='pageType' expr:value='data:blog.pageType'/>
     <!-- JQUERY -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'/>
     <!-- POPPER.JS -->

@@ -141,9 +141,7 @@
                         <a href="https://skywarriorthemes.com/crystalskull/author/admin/" data-original-title="View all posts by Eduflas"
                             data-toggle="tooltip">
                             <img src="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg"
-                                class="avatar avatar-60 photo authorimg" alt="author image"
-                                srcset="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 150w, https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 165w, https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 209w"
-                                sizes="(max-width: 60px) 100vw, 60px" width="60" height="60">by Eduflas</a>
+                                class="avatar avatar-60 photo authorimg" alt="author image">by Eduflas</a>
                         <i>|</i>
                         <a href="https://skywarriorthemes.com/crystalskull/category/strategy/"> Strategy </a>
                         <i>|</i>
@@ -242,7 +240,7 @@
                     <div class="title-wrapper">
                         <h3 class="widget-title bdr bdr-blue">POPULAR POSTS</h3>
                     </div>
-                    <div class="container uberlangerung px-0 clear">
+                    <div id="latestsPosts" class="container uberlangerung px-0 clear">
                         <div class="card rounded-0">
                             <img class="card-img" src="images/demo01.jpg" alt="Card image">
                             <div class="card-img-overlay">
@@ -633,11 +631,10 @@
             </div>
         </div>
     </div>
+    <input type='hidden' id='pageType' name='pageType' value='item'/>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

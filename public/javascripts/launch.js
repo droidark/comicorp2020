@@ -314,7 +314,7 @@ $(() => {
             post.author = util.getAuthor(data.author);
             if($('#score').length) {
                 post.score = util.getScore(data.content);
-                post.color = util.getColor(data.content);
+                post.color = util.getColor(post.score);
                 $('#score').append(buildScore.complete(post.score, post.color));
             }
         });

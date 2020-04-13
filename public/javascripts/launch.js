@@ -312,6 +312,10 @@ $(() => {
             }
         }).done((data) => {
             post.author = util.getAuthor(data.author);
+            $('#author-header a img').attr('src', post.author.avatar);
+            $('#author-header a').attr({
+                href: post.author.link, 
+                'data-original-title': config.by + post.author.name}).text(config.by + post.author.name);
             if($('#score').length) {
                 post.score = util.getScore(data.content);
                 post.color = util.getColor(post.score);

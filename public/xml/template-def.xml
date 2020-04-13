@@ -538,9 +538,11 @@
                 </b:includable>
                 <b:includable id='postBody' var='post'>
                   <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
-                  <div class='post-pinfo'>
-                    por <a href='https://skywarriorthemes.com/crystalskull/author/admin/' data-original-title='por Fozz' data-toggle='tooltip'>
-                      <data:post.author.name/></a><i>|</i><data:post.date/>
+                  <div id='author-header' class='post-pinfo'>
+                    <a href='' data-original-title='' data-toggle='tooltip'>
+                      <img src='https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg' class='avatar avatar-60 photo authorimg' alt='author image'/>
+                    </a>
+                    <i>|</i><data:post.date/>                    
                   </div>
                   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
                     <data:post.body/>                    
@@ -574,6 +576,15 @@
                 <!-- POST FOOTER -->
                 <b:includable id='postFooter' var='post'>
                   <div class='post-footer'>
+                    <div class='card author'>
+                        <div class='card-header'>
+                            <img src='https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_200x200.jpg' alt='avatar'/>
+                        </div>
+                        <div class='card-block'>
+                            <a class='card-title' href='https://twitter.com/eduflass'>@Eduflass</a>
+                            <p class='card-text'>Elemento lento, torpe y débil que ocasionalmente escribe cosas sin sentido. No lo sigan.</p>
+                        </div>                        
+                    </div>
                     <b:include name='footerBylines'/>
                     <b:include data='post' name='postFooterAuthorProfile'/>
                   </div>

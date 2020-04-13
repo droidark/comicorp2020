@@ -316,7 +316,7 @@ $(() => {
                 href: post.author.link, 
                 'data-original-title': config.by + post.author.name})
                 .append(config.by + post.author.name);
-            $('#author-footer .card-header').attr({
+            $('#author-footer .card-header img').attr({
                 src: post.author.avatar,
                 alt: post.author.name});
             $('#author-footer .card-block a.card-title').attr({

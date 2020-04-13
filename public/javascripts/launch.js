@@ -316,6 +316,12 @@ $(() => {
                 href: post.author.link, 
                 'data-original-title': config.by + post.author.name})
                 .append(config.by + post.author.name);
+            $('#author-footer .card-header').attr({
+                src: post.author.avatar,
+                alt: post.author.name});
+            $('#author-footer .card-block a.card-title').attr({
+                href: post.author.link}).append(post.author.name);
+            $('#author-footer .card-block p.card-text').append(post.author.about);
             if($('#score').length) {
                 post.score = util.getScore(data.content);
                 post.color = util.getColor(post.score);

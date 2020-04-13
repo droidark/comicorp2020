@@ -285,8 +285,7 @@ $(() => {
             }
         });
     } else if(pageType == 'item') {
-        // const postId = $('#postId').val();
-        const postId = '6050739072749113654';
+        const postId = $('#postId').val();
         // LATEST POST
         $.ajax({
             data: {

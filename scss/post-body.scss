@@ -62,7 +62,6 @@
 }
 .author {
     flex-direction: row;
-    flex-wrap: wrap;
     border-top: 0;
     margin-bottom: 2rem;
     @include radius(0);

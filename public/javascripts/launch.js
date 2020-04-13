@@ -315,9 +315,7 @@ $(() => {
             if($('#score').length) {
                 post.score = util.getScore(data.content);
                 post.color = util.getColor(data.content);
-                $('#score')
-                    .addClass('post-review')
-                    .append(buildScore.complete(post.score, post.color));
+                $('#score').append(buildScore.complete(post.score, post.color));
             }
         });
     }

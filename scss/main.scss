@@ -109,6 +109,7 @@ h2.card-title {
     @include transition(all, .5s, ease);
 }
 .card-text {
+    display: flex;
     color:#666;
     text-align: justify;
 }

@@ -200,6 +200,64 @@ const build = {
             .append($.cardImg)
             .append($.cardImgOverlay);
         $('#latestsPosts').append($.card);
+    },
+    index: (page, type) => {
+        let pp = 1, cp = 1, np = 2;
+        let tokens = JSON.parse(sessionStorage.getItem('tokens'));        
+        cp = sessionStorage.getItem('currentPage');
+        if(page > cp) {
+            np = page + 1;
+            pp = page > 2 ? (page - 1) : 1;
+        } else if(page < cp) {
+            np = cp;
+            pp = page > 2 ? (page - 1) : 1;
+        }
+        let parameters = {
+            maxResults: config.maxPosts,
+            fields: config.indexCallFields
+        };
+        if(page > 1) {
+            parameters.pageToken = tokens[page];
+        }
+        $.ajax({
+            data: parameters
+        }).done((data) => {
+            $('#neon').empty();
+            if(type == 'index' || page > cp) {
+                tokens[np] = data.nextPageToken;                
+            }
+            for(let i = 0; i < config.maxPosts; i++) {
+                post.title = data.items[i].title;
+                post.link = data.items[i].url;
+                post.date = util.getDate(data.items[i].published);
+                post.thumb = util.getFirstImage(data.items[i].content);
+                post.text = util.getText(data.items[i].content, data.items[i].title);
+                post.author = util.getAuthor(data.items[i].author);
+                post.score = util.getScore(data.items[i].content);
+                post.color = util.getColor(post.score);
+                post.labels = data.items[i].labels;            
+                build.post(post);
+                build.postInfo(post);
+                if(type === 'index') {
+                    build.latestPosts(post);                    
+                }
+            }
+            if(page == 1) {
+                $('#previousPage').parent().addClass('disabled');
+                $('#previousPage').attr({
+                    'aria-disabled': true,
+                    tabindex: -1
+                }).removeClass('blue');
+            } else {
+                $('#previousPage').parent().removeClass('disabled');
+                $('#previousPage').removeAttr('aria-disabled');
+                $('#previousPage').removeAttr('tabindex');
+                $('#previousPage').addClass('blue');
+            }
+            cp = page;
+            sessionStorage.setItem('currentPage', cp);
+            sessionStorage.setItem('tokens', JSON.stringify(tokens));
+        });        
     }
 }
 const agMarqueeOptions = {
@@ -261,28 +319,34 @@ $(() => {
     $('#LinkList1,#LinkList2').addClass('col-lg');
 
     const pageType = $('#pageType').val();
+    const tokens = {1: '-'};
+    sessionStorage.setItem('currentPage', 1);
+    sessionStorage.setItem('tokens', JSON.stringify(tokens));
+       
+
     // INDEX
     if(pageType == 'index') {
-        $.ajax({
-            data: {
-                maxResults: config.maxPosts,
-                fields: config.indexCallFields
-            }
-        }).done(function(data) {
-            for(let i = 0; i < config.maxPosts; i++) {
-                post.title = data.items[i].title;
-                post.link = data.items[i].url;
-                post.date = util.getDate(data.items[i].published);
-                post.thumb = util.getFirstImage(data.items[i].content);
-                post.text = util.getText(data.items[i].content, data.items[i].title);
-                post.author = util.getAuthor(data.items[i].author);
-                post.score = util.getScore(data.items[i].content);
-                post.color = util.getColor(post.score);
-                post.labels = data.items[i].labels;            
-                build.post(post);
-                build.postInfo(post);
-                build.latestPosts(post);
-            }
+        // BUILD INDEX
+        build.index(1, 'index');
+
+        // NEXT PAGE
+        $('#nextPage').on('click', (e) => {
+            e.preventDefault();
+            const nextPage = parseInt(sessionStorage.getItem('currentPage')) + 1;
+            build.index(nextPage, 'next');
+            $('html, body').animate({
+                scrollTop: $('#neon').offset().top
+            }, 2000);
+        });
+
+        // PREVIOUS PAGE
+        $('#previousPage').on('click', (e) => {
+            e.preventDefault();
+            const previousPage = parseInt(sessionStorage.getItem('currentPage')) - 1;
+            build.index(previousPage, 'previous');
+            $('html, body').animate({
+                scrollTop: $('#neon').offset().top
+            }, 2000);
         });
     } else if(pageType == 'item') {
         const postId = $('#postId').val();

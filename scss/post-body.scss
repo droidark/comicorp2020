@@ -14,6 +14,10 @@
     }
     a.spotify {
         color: $post-body-spotify-link-color;
+        &::before {
+            content: '\f1bc';
+            margin-right: .1rem;
+        }
     }
     blockquote {
         padding: .5rem 0 .5rem 1rem;

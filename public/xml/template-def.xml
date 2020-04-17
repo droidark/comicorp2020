@@ -5,7 +5,7 @@
     <meta charset='utf-8'/>
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
     <title><data:view.title.escaped/> - <data:view.description.escaped/></title>
-    <b:include data='blog' name='all-head-content'/>
+    <!-- <b:include data='blog' name='all-head-content'/> -->
     <!-- BOOTSTRAP CSS -->
     <link crossorigin='anonymous' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' rel='stylesheet'/>
     <!-- AWESOME FONTS CSS -->
@@ -16,23 +16,20 @@
     <b:skin><![CDATA[]]></b:skin>
   </head>
   <body>
+    <!-- FACEBOOK PLUGIN -->
+    <div id='fb-root'/>
+    <script async='async' crossorigin='anonymous' defer='defer' src='https://connect.facebook.net/es_LA/sdk.js#xfbml=1&amp;version=v6.0&amp;appId=1784322505131952&amp;autoLogAppEvents=1'/>
     <!-- TOP MENU BAR SECTION -->
     <div class='w-100 top-menu-bar'>
       <div class='container'>
           <b:section class='row' id='topMenuBar' maxwidgets='2' showaddelement='no'>
             <b:widget id='LinkList1' locked='true' title='' type='LinkList' version='2' visible='true'>
               <b:widget-settings>
-                <b:widget-setting name='link-3'>#</b:widget-setting>
                 <b:widget-setting name='sorting'>NONE</b:widget-setting>
-                <b:widget-setting name='link-4'>#</b:widget-setting>
-                <b:widget-setting name='text-1'>Answers</b:widget-setting>
-                <b:widget-setting name='link-1'>#</b:widget-setting>
-                <b:widget-setting name='text-0'>Users</b:widget-setting>
-                <b:widget-setting name='link-2'>#</b:widget-setting>
-                <b:widget-setting name='text-3'>Privacy</b:widget-setting>
-                <b:widget-setting name='link-0'>#</b:widget-setting>
-                <b:widget-setting name='text-2'>Reviews</b:widget-setting>
-                <b:widget-setting name='text-4'>Contact</b:widget-setting>
+                <b:widget-setting name='text-1'>Acceso</b:widget-setting>
+                <b:widget-setting name='link-1'>https://blogger.com</b:widget-setting>
+                <b:widget-setting name='text-0'>Inicio</b:widget-setting>
+                <b:widget-setting name='link-0'>https://comicorp.blogspot.com</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main'>
                 <b:include name='widget-title'/>
@@ -154,23 +151,23 @@
           </button>
           <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav mr-auto'>
-              <li class='nav-item active'>
-                <a class='nav-link' href='#'>Home <span class='sr-only'>(current)</span></a>
+              <li class='nav-item'>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Cine%20Barato'>Cine Barato</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link' href='#'>Link</a>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Anime%20y%20Manga'>Anime y Manga</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Series'>Series</a>
               </li>
               <li class='nav-item dropdown'>
-                <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' id='navbarDropdown' role='button'>Dropdown</a>
+                <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' id='navbarDropdown' role='button'>Cómics</a>
                   <div aria-labelledby='navbarDropdown' class='dropdown-menu'>
-                    <a class='dropdown-item' href='#'>Action</a>
-                    <a class='dropdown-item' href='#'>Another action</a>
-                    <div class='dropdown-divider'/>
-                    <a class='dropdown-item' href='#'>Something else here</a>
+                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Marvel'>Marvel</a>
+                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/DC%20y%20punto.'>DC</a>
+                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Image'>Image</a>
+                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Indie'>Indie</a>
                   </div>
-              </li>
-              <li class='nav-item'>
-                <a class='nav-link disabled' href='#'>Disabled</a>
               </li>
             </ul>
           </div>
@@ -191,7 +188,7 @@
         </div>
         <div class='row'>
           <ol class='breadcrumb'>
-            <li aria-current='page' class='breadcrumb-item'>Home</li>
+            <li aria-current='page' class='breadcrumb-item'>Inicio</li>
             <li aria-current='page' class='breadcrumb-item active'><data:view.title.escaped/></li>
           </ol>            
         </div>
@@ -202,10 +199,11 @@
       <div class='container'>
         <div class='ticker-title'><i class='fa fa-bullhorn'/>NOTICIAS</div>
         <div class='news'>
-          <span class='badge badge-primary'>Adventure</span><a href='#'>Mauris sed urna dui. Aenean consequat non ex eget congue</a>
-          <span class='badge badge-warning'>Strategy</span><a href='#'>Vestibulum ut dignissim tellus</a>
-          <span class='badge badge-success'>Shooters</span><a href='#'>Integer quis orci nisi auguros grantos cibilia lorbos</a>
-          <span class='badge badge-danger'>Comics</span><a href='#'>Mollis leo semper dictum ras ut magna met</a>
+          <span class='badge badge-primary'>Cine</span><a href='http://comicorp.blogspot.com/2020/03/para-quedarse-en-casa-castlevania.html'>PARA QUEDARSE EN CASA: CASTLEVANIA</a>
+          <span class='badge badge-warning'>Anime</span><a href='http://comicorp.blogspot.com/2020/03/kengan-ashura.html'>KENGAN ASHURA</a>
+          <span class='badge badge-success'>Indie</span><a href='http://comicorp.blogspot.com/2020/03/aliens-dead-orbit.html'>ALIENS: DEAD ORBIT</a>
+          <span class='badge badge-danger'>Marvel</span><a href='http://comicorp.blogspot.com/2020/02/spider-gwen-5.html'>SPIDER GWEN 5</a>
+          <span class='badge badge-primary'>DC</span><a href='https://comicorp.blogspot.com/2020/02/harleen.html'>HARLEEN</a>
         </div>          
       </div>
     </div>
@@ -215,7 +213,7 @@
         <div class='container'>
           <div class='row'>
             <b:section class='col-lg-8' id='main' maxwidgets='2' showaddelements='no'>
-              <b:widget id='HTML4' locked='yes' title='Disqus for comicorp' type='HTML' visible='true'>
+              <b:widget id='HTML4' locked='true' title='Disqus for comicorp' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
                   <b:widget-setting name='content'><![CDATA[<!-- Disqus Widget -->]]></b:widget-setting>
                 </b:widget-settings>
@@ -257,7 +255,7 @@
                   </script>
                 </b:includable>
               </b:widget>
-              <b:widget id='Blog1' locked='yes' title='Entradas del blog' type='Blog' version='2' visible='true'>
+              <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog' version='2' visible='true'>
                 <b:widget-settings>
                   <b:widget-setting name='showDateHeader'>false</b:widget-setting>
                   <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
@@ -291,6 +289,17 @@
                       <h3 class='widget-title bdr bdr-blue'>NUEVAS ENTRADAS</h3>
                   </div>
                   <div id='neon'/>
+                  <!-- PAGINATION -->
+                  <nav aria-label='Page navigation example' class='clear' id='pagination'>
+                    <ul class='pagination justify-content-center'>
+                      <li class='page-item disabled'>
+                        <a aria-disabled='true' class='page-link' href='Anterior' id='previousPage' tabindex='-1'>Anterior</a>
+                      </li>
+                      <li class='page-item'>
+                        <a class='page-link blue' href='Siguiente' id='nextPage'>Siguiente</a>
+                      </li>
+                    </ul>
+                  </nav>
                   <!-- ELSE SPECIFIC POST -->
                   <b:else/>
                     <div class='blog-posts hfeed container'>
@@ -448,7 +457,7 @@
                     </b:if>
                     <b:if cond='data:showCmtPopup'>
                       <div id='comment-popup'>
-                        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
+                        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'/>
                       </div>
                     </b:if>
                   </section>
@@ -520,7 +529,6 @@
                     <data:messages.olderPosts/>
                   </a>
                 </b:includable>
-                <!-- START POST [IMPORTANT] -->
                 <b:includable id='post' var='post'>
                   <div class='post'>
                     <b:include data='post' name='postMeta'/>
@@ -531,16 +539,16 @@
                       <b:include data='post' name='postJumpLink'/>
                     </b:if>
                     <b:include data='post' name='postFooter'/>
-                    <b:if cond='data:blog.pageType == "item"'>
-                      <input type='hidden' id='postId' name='postId' expr:value='data:post.id'/>
+                    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                      <input expr:value='data:post.id' id='postId' name='postId' type='hidden'/>
                     </b:if>
                   </div>
                 </b:includable>
                 <b:includable id='postBody' var='post'>
                   <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
-                  <div id='author-header' class='post-pinfo'>
-                    <a href='' data-original-title='' data-toggle='tooltip'>
-                      <img src='https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg' class='avatar avatar-60 photo authorimg' alt='author image'/>
+                  <div class='post-pinfo' id='author-header'>
+                    <a data-original-title='' data-toggle='tooltip' href=''>
+                      <img alt='author image' class='avatar avatar-60 photo authorimg' src='https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg'/>
                     </a>
                     <i>|</i><data:post.date/>                    
                   </div>
@@ -573,16 +581,15 @@
                     </span>
                   </b:if>
                 </b:includable>
-                <!-- POST FOOTER -->
                 <b:includable id='postFooter' var='post'>
                   <div class='post-footer'>
-                    <div id="author-footer" class='card author'>
+                    <div class='card author' id='author-footer'>
                       <div class='card-header'>
-                        <img src='' alt=''/>
+                        <img alt='' src=''/>
                       </div>
                       <div class='card-block'>
-                        <a class='card-title' href=''></a>
-                        <p class='card-text'></p>
+                        <a class='card-title' href=''/>
+                        <p class='card-text'/>
                       </div>
                     </div>
                     <b:include name='footerBylines'/>
@@ -603,7 +610,6 @@
                     </div>
                   </b:if>
                 </b:includable>
-                <!-- POST HEADER NO DISPLAYED-->
                 <b:includable id='postHeader' var='post'>
                   <b:include name='headerByline'/>
                 </b:includable>
@@ -617,7 +623,6 @@
                     <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
                   </div>
                 </b:includable>
-                <!-- POST TITLE -->
                 <b:includable id='postTitle' var='post'>
                   <a expr:name='data:post.id'/>
                   <b:if cond='data:post.title != &quot;&quot;'>
@@ -681,7 +686,7 @@
                     </p>
                     <b:if cond='data:showCmtPopup'>
                       <div id='comment-popup'>
-                        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
+                        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'/>
                       </div>
                     </b:if>
                   </section>
@@ -735,14 +740,42 @@
               </b:widget>
             </b:section>
           </div>
-        </div>
+        </div>        
       </div>
     <!-- FOOTER -->
     <footer class='w-100 footer'>
       <div class='container'>
         <div class='row'>
-          <b:section class='col-lg-4' id='footer' maxwidgets='' showaddelements='yes'/>
-          <b:section class='col-lg-4' id='footer2' maxwidgets='' showaddelements='yes'/>
+          <b:section class='col-lg-4' id='footer' maxwidgets='' showaddelements='yes'>
+            <b:widget id='HTML6' locked='false' title='TWITTER' type='HTML' version='2' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<a class='twitter-timeline' data-height='400' data-theme='dark' href='https://twitter.com/comicorp?ref_src=twsrc%5Etfw'>Tweets por Comicorp</a> <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>]]></b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+                <div class='title-wrapper title-wrapper-dunkel'>
+                  <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
+                </div> 
+                <div class='widget-content'>
+                  <data:content/>
+                </div>
+              </b:includable>
+            </b:widget>
+          </b:section>
+          <b:section class='col-lg-4' id='footer2' maxwidgets='' showaddelements='yes'>
+            <b:widget id='HTML5' locked='false' title='FACEBOOK' type='HTML' version='2' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<div class='fb-page' data-href='https://www.facebook.com/comicorp/' data-tabs='timeline' data-width='' data-height='400' data-small-header='false' data-adapt-container-width='true' data-hide-cover='false' data-show-facepile='true'><blockquote cite='https://www.facebook.com/comicorp/' class='fb-xfbml-parse-ignore'><a href='https://www.facebook.com/comicorp/'>Comicorp</a></blockquote></div>]]></b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+                <div class='title-wrapper title-wrapper-dunkel'>
+                  <h3 class='widget-title bdr bdr-blue'><data:title/></h3>                    
+                </div> 
+                <div class='widget-content'>
+                  <data:content/>
+                </div>
+              </b:includable>
+            </b:widget>
+          </b:section>
           <b:section class='col-lg-4' id='footer3' maxwidgets='' showaddelements='yes'>
             <b:widget id='ContactForm1' locked='false' title='Contacto' type='ContactForm' version='2' visible='true'>
               <b:includable id='main'>
@@ -823,7 +856,7 @@
         </div>
       </div>
     </div>
-    <input type='hidden' id='pageType' name='pageType' expr:value='data:blog.pageType'/>
+    <input expr:value='data:blog.pageType' id='pageType' name='pageType' type='hidden'/>
     <!-- JQUERY -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'/>
     <!-- POPPER.JS -->

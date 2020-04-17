@@ -4,7 +4,13 @@
     background: $post-body-bg-color;
     border: 1px solid $post-body-border-color;
     font-size: .95em;
-    color: $post-body-txt-color;    
+    color: $post-body-txt-color;
+    a {
+        color: $post-body-link-color;
+    }
+    a.spotify {
+        color: $post-body-spotify-link-color;
+    }
     blockquote {
         padding: .5rem 0 .5rem 1rem;
         font-style: italic;
@@ -109,5 +115,19 @@
         @include only-lg {
             width: 80%
         }
+    }
+}
+.post-labels {
+    a {
+        border-radius: 5px;
+        border: 1px solid #eee;
+        font-style: normal;
+        font-size: 12px !important;
+        font-weight: 700;
+        padding: 5px 10px;
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #333;
+        background: #fbfbfb;
     }
 }

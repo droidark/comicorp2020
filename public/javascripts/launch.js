@@ -235,9 +235,7 @@ const build = {
             fields: config.indexCallFields
         };
         if(isLabel != null) {
-            console.log(isLabel[1]);
-            isLabel[1] = isLabel[1].replace('%20', ' ');
-            console.log(isLabel[1]);
+            isLabel[1] = isLabel[1].replace(/%20/g, ' ');
             parameters.labels = isLabel[1];
         }
         if(page > 1) {

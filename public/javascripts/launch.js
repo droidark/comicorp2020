@@ -219,7 +219,7 @@ const build = {
     index: (page, type) => {
         let pp = 1, cp = 1, np = 2;
         let tokens = JSON.parse(sessionStorage.getItem('tokens'));
-        const regex = /\/search\/label\/(.+[^\/])/g;
+        const regex = /\/search\/label\/(.+[^\/\?m=1])/g;
         const currentlocation = window.location.href ;
         const isLabel = regex.exec(currentlocation);
         cp = sessionStorage.getItem('currentPage');

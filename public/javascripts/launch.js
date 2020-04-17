@@ -181,29 +181,47 @@ const build = {
             .append(post.date);
         $('#neon').append($.postInfo);
     },
-    latestPosts: (post) => {
-        $.calendar = $('<i>', {class: 'fas fa-calendar mr-2'});
-        $.cardText = $('<small>', {class: 'card-text text-white'})
-            .append($.calendar)
-            .append(post.date);
-        $.link = $('<a>', {href: post.link, text: post.title});
-        $.cardTitle = $('<h5>', {class: 'card-title'})
-            .append($.link);
-        $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
-            .append($.cardText)
-            .append($.cardTitle);
-            if(post.score != null) {
-                $.cardImgOverlay.append(buildScore.simple(post.score.average, 'card-text', post.color));
+    latestPosts: () => {
+        $.ajax({
+            data: {
+                maxResults: config.maxPosts,
+                fields: config.latestPostsCallFields
             }
-        $.cardImg = $('<img>', {class: 'card-img', src: post.thumb, alt: post.title});
-        $.card = $('<div>', {class: 'card rounded-0'})
-            .append($.cardImg)
-            .append($.cardImgOverlay);
-        $('#latestsPosts').append($.card);
+        }).done((data) => {
+            for(let i = 0; i < config.maxPosts; i++) {
+                post.title = data.items[i].title;
+                post.link = data.items[i].url;
+                post.date = util.getDate(data.items[i].published);
+                post.thumb = util.getFirstImage(data.items[i].content);
+                post.score = util.getScore(data.items[i].content);
+                post.color = util.getColor(post.score);
+                $.calendar = $('<i>', {class: 'fas fa-calendar mr-2'});
+                $.cardText = $('<small>', {class: 'card-text text-white'})
+                    .append($.calendar)
+                    .append(post.date);
+                $.link = $('<a>', {href: post.link, text: post.title});
+                $.cardTitle = $('<h5>', {class: 'card-title'})
+                    .append($.link);
+                $.cardImgOverlay = $('<div>', {class: 'card-img-overlay'})
+                    .append($.cardText)
+                    .append($.cardTitle);
+                    if(post.score != null) {
+                        $.cardImgOverlay.append(buildScore.simple(post.score.average, 'card-text', post.color));
+                    }
+                $.cardImg = $('<img>', {class: 'card-img', src: post.thumb, alt: post.title});
+                $.card = $('<div>', {class: 'card rounded-0'})
+                    .append($.cardImg)
+                    .append($.cardImgOverlay);
+                $('#latestsPosts').append($.card);
+            }
+        });        
     },
     index: (page, type) => {
         let pp = 1, cp = 1, np = 2;
-        let tokens = JSON.parse(sessionStorage.getItem('tokens'));        
+        let tokens = JSON.parse(sessionStorage.getItem('tokens'));
+        const regex = /\/search\/label\/(.+[^\/])/g;
+        const currentlocation = window.location.href ;
+        const isLabel = regex.exec(currentlocation);
         cp = sessionStorage.getItem('currentPage');
         if(page > cp) {
             np = page + 1;
@@ -216,6 +234,9 @@ const build = {
             maxResults: config.maxPosts,
             fields: config.indexCallFields
         };
+        if(isLabel != null) {
+            parameters.labels = isLabel[1];
+        }
         if(page > 1) {
             parameters.pageToken = tokens[page];
         }
@@ -237,10 +258,7 @@ const build = {
                 post.color = util.getColor(post.score);
                 post.labels = data.items[i].labels;            
                 build.post(post);
-                build.postInfo(post);
-                if(type === 'index') {
-                    build.latestPosts(post);                    
-                }
+                build.postInfo(post);                
             }
             if(page == 1) {
                 $('#previousPage').parent().addClass('disabled');
@@ -328,7 +346,8 @@ $(() => {
     if(pageType == 'index') {
         // BUILD INDEX
         build.index(1, 'index');
-
+        // LATESTS POSTS
+        build.latestPosts();
         // NEXT PAGE
         $('#nextPage').on('click', (e) => {
             e.preventDefault();
@@ -351,22 +370,7 @@ $(() => {
     } else if(pageType == 'item') {
         const postId = $('#postId').val();
         // LATEST POST
-        $.ajax({
-            data: {
-                maxResults: config.maxPosts,
-                fields: config.latestPostsCallFields
-            }
-        }).done((data) => {
-            for(let i = 0; i < config.maxPosts; i++) {
-                post.title = data.items[i].title;
-                post.link = data.items[i].url;
-                post.date = util.getDate(data.items[i].published);
-                post.thumb = util.getFirstImage(data.items[i].content);
-                post.score = util.getScore(data.items[i].content);
-                post.color = util.getColor(post.score);
-                build.latestPosts(post);
-            }
-        });
+        build.latestPosts();
         // AUTHOR INFORMATION
         $.ajax({
             url: config.resource + config.blogId + '/posts/' + postId,

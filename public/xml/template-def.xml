@@ -550,14 +550,14 @@
                 </b:includable>
                 <b:includable id='postBody' var='post'>
                   <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
-                  <div class='post-pinfo' id='author-header'>
+                  <div class='post-pinfo bg-white border border-bottom-0 mb-0' id='author-header'>
                     <a data-original-title='' data-toggle='tooltip' href=''>
-                      <img alt='author image' class='avatar avatar-60 photo authorimg' src='https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg'/>
+                      <img alt='author image' class='avatar avatar-60 photo authorimg' src='https://1.bp.blogspot.com/-FQZD4Wsir2s/Xpn_m9Sa0MI/AAAAAAAABik/Q0Az5Cpj_jQYleeX_-osEHz134RICLBOACLcBGAsYHQ/s1600/user-icon.png'/>
                     </a>
-                    <i>|</i><data:post.date/>                    
+                    <i>|</i><data:post.date/>
                   </div>
                   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
-                    <data:post.body/>                    
+                    <data:post.body/>
                   </div>
                 </b:includable>
                 <b:includable id='postBodySnippet' var='post'>

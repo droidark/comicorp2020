@@ -5,6 +5,7 @@
     border: 1px solid $post-body-border-color;
     font-size: .95em;
     color: $post-body-txt-color;
+    display: flow-root;
     a {
         color: $post-body-link-color;
         text-decoration: none;

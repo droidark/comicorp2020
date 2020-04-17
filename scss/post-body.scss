@@ -7,6 +7,10 @@
     color: $post-body-txt-color;
     a {
         color: $post-body-link-color;
+        text-decoration: none;
+        &:hover {
+            color: $post-body-link-color-hover;
+        }
     }
     a.spotify {
         color: $post-body-spotify-link-color;
@@ -119,15 +123,20 @@
 }
 .post-labels {
     a {
-        border-radius: 5px;
-        border: 1px solid #eee;
+        text-decoration: none;
+        border: 1px solid $post-labels-link-border-color;
         font-style: normal;
-        font-size: 12px !important;
+        font-size: .750em;
         font-weight: 700;
-        padding: 5px 10px;
-        margin-bottom: 8px;
+        padding: .3rem .7rem;
+        margin-bottom: 1rem;
         display: inline-block;
-        color: #333;
-        background: #fbfbfb;
+        color: $post-labels-link-txt-color;
+        background: $post-labels-link-bg-color;
+        @include radius(5px);
+        &:hover {
+            background-color: $post-labels-link-bg-color-hover;
+            color: $post-labels-link-txt-color-hover;
+        }
     }
 }

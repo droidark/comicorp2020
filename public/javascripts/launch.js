@@ -188,7 +188,7 @@ const build = {
                 fields: config.latestPostsCallFields
             }
         }).done((data) => {
-            for(let i = 0; i < config.maxPosts; i++) {
+            for(let i = 0; i < data.items.length; i++) {
                 post.title = data.items[i].title;
                 post.link = data.items[i].url;
                 post.date = util.getDate(data.items[i].published);
@@ -220,7 +220,8 @@ const build = {
         let pp = 1, cp = 1, np = 2;
         let tokens = JSON.parse(sessionStorage.getItem('tokens'));
         const regex = /\/search\/label\/(.+[^\/\?m=1])/g;
-        const currentlocation = window.location.href ;
+        // const currentlocation = window.location.href;
+        const currentlocation = 'https://comicorp.blogspot.com/search/label/Netflix';
         const isLabel = regex.exec(currentlocation);
         cp = sessionStorage.getItem('currentPage');
         if(page > cp) {
@@ -245,10 +246,10 @@ const build = {
             data: parameters
         }).done((data) => {
             $('#neon').empty();
-            if(type == 'index' || page > cp) {
-                tokens[np] = data.nextPageToken;                
+            if(type == 'index' || page > cp && data.nextPageToken != undefined) {
+                tokens[np] = data.nextPageToken;
             }
-            for(let i = 0; i < config.maxPosts; i++) {
+            for(let i = 0; i < data.items.length; i++) {
                 post.title = data.items[i].title;
                 post.link = data.items[i].url;
                 post.date = util.getDate(data.items[i].published);
@@ -261,6 +262,20 @@ const build = {
                 build.post(post);
                 build.postInfo(post);                
             }
+            // NEXT HANDLER
+            if(data.nextPageToken != undefined) {
+                $('#nextPage').parent().removeClass('disabled');
+                $('#nextPage').removeAttr('aria-disabled');
+                $('#nextPage').removeAttr('tabindex');
+                $('#nextPage').addClass('blue');
+            } else {
+                $('#nextPage').parent().addClass('disabled');
+                $('#nextPage').attr({
+                    'aria-disabled': true,
+                    tabindex: -1
+                }).removeClass('blue');
+            }
+            // PREVIEW HANDLER
             if(page == 1) {
                 $('#previousPage').parent().addClass('disabled');
                 $('#previousPage').attr({

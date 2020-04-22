@@ -320,7 +320,7 @@ const config = {
     maxPosts: 5,
     indexCallFields: 'nextPageToken,items(published,url,title,content,author,labels)',
     latestPostsCallFields: 'items(published,url,content,title)',
-    singlePostCallFields: 'author,content',
+    singlePostCallFields: 'author,content,title',
     afterText: '...',
     readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
@@ -404,6 +404,19 @@ $(() => {
             }
         }).done((data) => {
             post.author = util.getAuthor(data.author);
+            post.title = data.title;
+            post.thumb = util.getFirstImage(data.content);
+            // FACEBOOK METADATA
+            $.metaTitle = $('<meta>', {
+                property: 'og:title',
+                content: post.title
+            });
+            $.metaImg = $('<meta>', {
+                property: 'og:image',
+                content: post.thumb
+            });
+            $('.post').append($.metaTitle).append($.metaImg);
+            // AUTHOR HEADER
             $('#author-header a img').attr('src', post.author.avatar);
             $('#author-header a').attr({
                 href: post.author.link, 

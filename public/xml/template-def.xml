@@ -11,9 +11,9 @@
       <meta property='og:description' content='El legítimo orden comiqueril'/>
       <meta property='og:image' content='https://2.bp.blogspot.com/-DdNnA4RTuoQ/XqCB4AG6TnI/AAAAAAAABjE/T_FU7xC_3nwDmkyQ2Gf5bdsmZQIP7ozNgCLcBGAsYHQ/s1600/comicorp.png'/>
     <b:else/>
-      <title><data:blog.pageTitle/></title>
-      <meta name='twitter:card' content='summary_large_image'/>
+      <title><data:blog.pageTitle/></title>      
     </b:if>
+    <meta name='twitter:card' content='summary_large_image'/>
     <!-- <b:include data='blog' name='all-head-content'/> -->
     <!-- BOOTSTRAP CSS -->
     <link crossorigin='anonymous' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' rel='stylesheet'/>

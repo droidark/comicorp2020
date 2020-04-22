@@ -424,12 +424,7 @@ $(() => {
             $('head')
                 .append($.facebookMetaTitle)
                 .append($.facebookMetaImg)
-                .append($.facebookMetaDescription)
-                .append($.facebookMetaUrl)
-                .append($.twitterMetaTitle)
-                .append($.twitterMetaImg)
-                .append($.twitterMetaDescription)
-                .append($.twitterMetaUrl);
+                .append($.facebookMetaDescription);
             // AUTHOR HEADER
             $('#author-header a img').attr('src', post.author.avatar);
             $('#author-header a').attr({

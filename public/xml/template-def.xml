@@ -11,21 +11,25 @@
       <meta property='og:description' content='El legítimo orden comiqueril'/>
       <meta property='og:image' content='https://2.bp.blogspot.com/-DdNnA4RTuoQ/XqCB4AG6TnI/AAAAAAAABjE/T_FU7xC_3nwDmkyQ2Gf5bdsmZQIP7ozNgCLcBGAsYHQ/s1600/comicorp.png'/>
     <b:else/>
-      <title><data:blog.pageTitle/></title>  
-      <meta content='summary' name='twitter:card'/> 
+      <title><data:blog.pageTitle/></title>
       <meta content='@comicorp' name='twitter:site'/>
-      <meta content='@comicorp' name='twitter:creator'/>
-      <meta content='https://comicorp.blogspot.com' name='twitter:domain'/>
-      <meta expr:content='data:post.firstImageUrl' name='twitter:image:src'/>
-      <meta expr:content='data:post.title' name='twitter:title'/>
-      <b:if cond='data:blog.metaDescription'>
-        <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
-      <b:else/>
-        <meta expr:content='data:post.snippet' name='twitter:description'/>
+      <meta content='summary_large_image' name='twitter:card'/>
+      <meta expr:content='data:view.title.escaped' name='twitter:title'/>
+      <meta expr:content='data:view.description.escaped' name='twitter:description'/>
+      <b:if cond='data:view.featuredImage'>
+        <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+        <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' name='twitter:image'/>
+      <b:elseif cond='data:widgets'/>
+        <b:loop reverse='true' values='data:widgets.Blog.first.posts where (p => p.featuredImage) map (p => p.featuredImage)' var='imageUrl'>
+          <meta expr:content='resizeImage(data:imageUrl, 1200, "1200:630")' property='og:image'/>
+          <meta expr:content='resizeImage(data:imageUrl, 1200, "1200:630")' name='twitter:image'/>
+        </b:loop>
+      <b:elseif cond='data:blog.postImageUrl'/>
+        <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+        <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' name='twitter:image'/>
       </b:if>
-        <meta expr:content='data:post.sharePostUrl' name='twitter:url'/>    
-      </b:if>
-      <meta name='twitter:card' content='summary_large_image'/>
+    </b:if>
+    <meta name='twitter:card' content='summary_large_image'/>
     <!-- <b:include data='blog' name='all-head-content'/> -->
     <!-- BOOTSTRAP CSS -->
     <link crossorigin='anonymous' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' rel='stylesheet'/>
@@ -733,7 +737,7 @@
               </b:widget>
               <b:widget id='HTML2' locked='false' title='CINE BARATO' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
-                  <b:widget-setting name='content'><![CDATA[<iframe src="https://www.youtube.com/embed/esVhAAANKEQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></b:widget-setting>
+                  <b:widget-setting name='content'><![CDATA[<iframe src="https://www.youtube.com/embed/PQg3w5I1c2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
                   <div class='title-wrapper'>

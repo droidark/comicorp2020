@@ -86,8 +86,18 @@ const util = {
     getText: (data, title) => {
         const length = 500;
         const regex = /(\r\n|\n|\r)/gm;
-        let text = $(data).text();
+        // OPTION 2
+        // let text = $(data).text();
+        // OPTION 2
+        let text = data.replace(/<[^>]*>?/gm, ' ').trim();
         if(text.length > 1) {
+            // OPTION 1
+            // text = text.trim()
+            //     .replace(regex, ' ')
+            //     .substring(0, length)
+            //     .trim();
+            // return text.substring(0, text.lastIndexOf(' '));
+            // OPTION 2
             text = text.trim()
                 .replace(regex, ' ')
                 .substring(0, length)
@@ -257,7 +267,7 @@ const build = {
                 post.author = util.getAuthor(data.items[i].author);
                 post.score = util.getScore(data.items[i].content);
                 post.color = util.getColor(post.score);
-                post.labels = data.items[i].labels;            
+                post.labels = data.items[i].labels; 
                 build.post(post);
                 build.postInfo(post);                
             }

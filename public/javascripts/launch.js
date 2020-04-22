@@ -409,22 +409,22 @@ $(() => {
             post.text = util.getText(data.content);
             post.link = data.url;
             // FACEBOOK AND TWITTER METADATA
-            $.facebookMetaTitle = $('<meta>', {
-                property: 'og:title',
-                content: post.title
-            });
-            $.facebookMetaDescription = $('<meta>', {
-                property: 'og:description',
-                content: post.text
-            });
-            $.facebookMetaImg = $('<meta>', {
-                property: 'og:image',
-                content: post.thumb
-            });
-            $('head')
-                .append($.facebookMetaTitle)
-                .append($.facebookMetaImg)
-                .append($.facebookMetaDescription);
+            // $.facebookMetaTitle = $('<meta>', {
+            //     property: 'og:title',
+            //     content: post.title
+            // });
+            // $.facebookMetaDescription = $('<meta>', {
+            //     property: 'og:description',
+            //     content: post.text
+            // });
+            // $.facebookMetaImg = $('<meta>', {
+            //     property: 'og:image',
+            //     content: post.thumb
+            // });
+            // $('head')
+            //     .append($.facebookMetaTitle)
+            //     .append($.facebookMetaImg)
+            //     .append($.facebookMetaDescription);
             // AUTHOR HEADER
             $('#author-header a img').attr('src', post.author.avatar);
             $('#author-header a').attr({

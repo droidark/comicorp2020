@@ -320,7 +320,7 @@ const config = {
     maxPosts: 5,
     indexCallFields: 'nextPageToken,items(published,url,title,content,author,labels)',
     latestPostsCallFields: 'items(published,url,content,title)',
-    singlePostCallFields: 'author,content,title',
+    singlePostCallFields: 'author,content,title,url',
     afterText: '...',
     readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
@@ -407,23 +407,50 @@ $(() => {
             post.title = data.title;
             post.thumb = util.getFirstImage(data.content);
             post.text = util.getText(data.content);
+            post.link = data.url;
             // FACEBOOK METADATA
-            $.metaTitle = $('<meta>', {
+            $.facebookMetaTitle = $('<meta>', {
                 property: 'og:title',
                 content: post.title
             });
-            $.metaImg = $('<meta>', {
-                property: 'og:image',
-                content: post.thumb
-            });
-            $.metaDescription = $('<meta>', {
+            $.facebookMetaDescription = $('<meta>', {
                 property: 'og:description',
                 content: post.text
             });
-            $('.post')
-                .append($.metaTitle)
-                .append($.metaImg)
-                .append($.metaDescription);
+            $.facebookMetaImg = $('<meta>', {
+                property: 'og:image',
+                content: post.thumb
+            });
+            $.facebookMetaUrl = $('<meta>', {
+                property: 'og:url',
+                content: post.text
+            });
+            // TWITTER METADATA
+            $.twitterMetaTitle = $('<meta>', {
+                property: 'twitter:title',
+                content: post.title
+            });
+            $.twitterMetaDescription = $('<meta>', {
+                property: 'twitter:description',
+                content: post.text
+            });
+            $.twitterMetaImg = $('<meta>', {
+                property: 'twitter:image',
+                content: post.thumb
+            });
+            $.twitterMetaUrl = $('<meta>', {
+                property: 'twitter:card',
+                content: post.text
+            });
+            $('head')
+                .append($.facebookMetaTitle)
+                .append($.facebookMetaImg)
+                .append($.facebookMetaDescription)
+                .append($.facebookMetaUrl)
+                .append($.twitterMetaTitle)
+                .append($.twitterMetaImg)
+                .append($.twitterMetaDescription)
+                .append($.twitterMetaUrl);
             // AUTHOR HEADER
             $('#author-header a img').attr('src', post.author.avatar);
             $('#author-header a').attr({

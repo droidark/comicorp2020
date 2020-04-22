@@ -408,7 +408,7 @@ $(() => {
             post.thumb = util.getFirstImage(data.content);
             post.text = util.getText(data.content);
             post.link = data.url;
-            // FACEBOOK METADATA
+            // FACEBOOK AND TWITTER METADATA
             $.facebookMetaTitle = $('<meta>', {
                 property: 'og:title',
                 content: post.title
@@ -420,27 +420,6 @@ $(() => {
             $.facebookMetaImg = $('<meta>', {
                 property: 'og:image',
                 content: post.thumb
-            });
-            $.facebookMetaUrl = $('<meta>', {
-                property: 'og:url',
-                content: post.text
-            });
-            // TWITTER METADATA
-            $.twitterMetaTitle = $('<meta>', {
-                property: 'twitter:title',
-                content: post.title
-            });
-            $.twitterMetaDescription = $('<meta>', {
-                property: 'twitter:description',
-                content: post.text
-            });
-            $.twitterMetaImg = $('<meta>', {
-                property: 'twitter:image',
-                content: post.thumb
-            });
-            $.twitterMetaUrl = $('<meta>', {
-                property: 'twitter:card',
-                content: post.text
             });
             $('head')
                 .append($.facebookMetaTitle)

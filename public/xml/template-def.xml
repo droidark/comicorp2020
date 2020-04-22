@@ -10,14 +10,9 @@
       <meta property='og:title' content='COMICORP'/>
       <meta property='og:description' content='El legítimo orden comiqueril'/>
       <meta property='og:image' content='https://2.bp.blogspot.com/-DdNnA4RTuoQ/XqCB4AG6TnI/AAAAAAAABjE/T_FU7xC_3nwDmkyQ2Gf5bdsmZQIP7ozNgCLcBGAsYHQ/s1600/comicorp.png'/>
-      <meta property='og:url' content='https://comicorp.blogspot.com'/>
-      <!-- TWITTER META -->
-      <meta name='twitter:title' content='COMICORP'/>
-      <meta name='twitter:description' content='El legítimo orden comiqueril'/>
-      <meta name='twitter:image' content='https://2.bp.blogspot.com/-DdNnA4RTuoQ/XqCB4AG6TnI/AAAAAAAABjE/T_FU7xC_3nwDmkyQ2Gf5bdsmZQIP7ozNgCLcBGAsYHQ/s1600/comicorp.png'/>
-      <meta name='twitter:card' content='summary_large_image'/>
     <b:else/>
       <title><data:blog.pageTitle/></title>
+      <meta name='twitter:card' content='summary_large_image'/>
     </b:if>
     <!-- <b:include data='blog' name='all-head-content'/> -->
     <!-- BOOTSTRAP CSS -->

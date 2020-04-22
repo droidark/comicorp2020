@@ -406,6 +406,7 @@ $(() => {
             post.author = util.getAuthor(data.author);
             post.title = data.title;
             post.thumb = util.getFirstImage(data.content);
+            post.text = util.getText(data.content);
             // FACEBOOK METADATA
             $.metaTitle = $('<meta>', {
                 property: 'og:title',
@@ -415,7 +416,14 @@ $(() => {
                 property: 'og:image',
                 content: post.thumb
             });
-            $('.post').append($.metaTitle).append($.metaImg);
+            $.metaDescription = $('<meta>', {
+                property: 'og:description',
+                content: post.text
+            });
+            $('.post')
+                .append($.metaTitle)
+                .append($.metaImg)
+                .append($.metaDescription);
             // AUTHOR HEADER
             $('#author-header a img').attr('src', post.author.avatar);
             $('#author-header a').attr({

@@ -894,6 +894,6 @@
     <!-- MARQUEE.MIN.JS -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js'/>
     <!-- LAUNCH.MIN.JS -->
-    <script src='https://combinatronics.com/droidark/comicorp2020/develop/public/javascripts/launch.js'/>
+    <script src='https://combinatronics.com/droidark/comicorp2020/develop/public/javascripts/launch.min.js'/>
   </body>
 </html>

@@ -177,19 +177,22 @@
           <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav mr-auto'>
               <li class='nav-item'>
-                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Cine%20Barato'>Cine Barato</a>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Cine'>Cine Barato</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Anime%20y%20Manga'>Anime y Manga</a>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Anime'>Anime</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Series'>Series</a>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Manga'>Manga</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Reviews'>Reseñas</a>
               </li>
               <li class='nav-item dropdown'>
                 <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' id='navbarDropdown' role='button'>Cómics</a>
                   <div aria-labelledby='navbarDropdown' class='dropdown-menu'>
                     <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Marvel'>Marvel</a>
-                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/DC%20y%20punto.'>DC</a>
+                    <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/DC'>DC</a>
                     <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Image'>Image</a>
                     <a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Indie'>Indie</a>
                   </div>

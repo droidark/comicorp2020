@@ -186,7 +186,7 @@ const build = {
             .append($('<i>', {text: '|'}))
             .append($.labelLink)
             .append($('<i>', {text: '|'}))
-            .append('<span class="disqus-comment-count" data-disqus-url=""></span>')
+            .append('<span class="disqus-comment-count" data-disqus-url="'+ post.link +'"></span>')
             .append($('<i>', {text: '|'}))
             .append(post.date);
         $('#neon').append($.postInfo);

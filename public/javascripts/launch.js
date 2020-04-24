@@ -304,7 +304,7 @@ const build = {
             sessionStorage.setItem('currentPage', cp);
             sessionStorage.setItem('tokens', JSON.stringify(tokens));
             // EXECUTE DISQUS
-            DISQUSWIDGETS.getCount();
+            DISQUSWIDGETS.getCount({reset: true});
         });        
     }
 }

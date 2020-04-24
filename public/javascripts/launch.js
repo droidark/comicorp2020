@@ -190,7 +190,7 @@ const build = {
             .append($.commentLink)
             .append($('<i>', {text: '|'}))
             .append(post.date);
-        $('#neon').append($.postInfo);
+        $('#neon').append($.postInfo);        
     },
     latestPosts: () => {
         $.ajax({
@@ -272,6 +272,8 @@ const build = {
                 build.post(post);
                 build.postInfo(post);                
             }
+            // EXECUTE DISQUS
+            DISQUSWIDGETS.getCount();
             // NEXT HANDLER
             if(data.nextPageToken != undefined) {
                 $('#nextPage').parent().removeClass('disabled');

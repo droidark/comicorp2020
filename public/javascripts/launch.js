@@ -181,7 +181,8 @@ const build = {
             .append($.userImage)
             .append(config.by + post.author.name);
         $.labelLink = $('<a>', {href: config.searchLabel() + post.labels[0], text: post.labels[0]})
-        $.commentLink = $('<a>', {href: post.link + config.disqusId});
+        $.commentLink = $('<a>', {href: post.link + config.disqusId})
+            .append($('<i>', {class: config.commentsIcon + post.color}));
         $.postInfo
             .append($.userLink)
             .append($('<i>', {text: '|'}))
@@ -327,6 +328,7 @@ const config = {
     afterText: '...',
     readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
+    commentsIcon: 'far fa-comments ',
     disqusId: '#disqus_thread',
     by: 'por ',
     searchLabel: () => {

@@ -896,6 +896,6 @@
     <!-- DISQUS COUNTER -->
     <script id='dsq-count-scr' src='//comicorp.disqus.com/count.js'/>
     <!-- LAUNCH.MIN.JS -->
-    <script src='https://combinatronics.com/droidark/comicorp2020/develop/public/javascripts/launch.js'/>    
+    <script src='https://combinatronics.com/droidark/comicorp2020/develop/public/javascripts/launch.min.js'/>    
   </body>
 </html>

@@ -181,13 +181,14 @@ const build = {
             .append($.userImage)
             .append(config.by + post.author.name);
         $.labelLink = $('<a>', {href: config.searchLabel() + post.labels[0], text: post.labels[0]})
-        $.commentLink = $('<a>', {href: post.link + config.disqusId})
-            .append($('<i>', {class: config.commentsIcon + post.color}));
+        $.commentIcon = $('<i>', {class: config.commentsIcon + post.color});
+        $.commentLink = $('<a>', {href: post.link + config.disqusId});
         $.postInfo
             .append($.userLink)
             .append($('<i>', {text: '|'}))
             .append($.labelLink)
             .append($('<i>', {text: '|'}))
+            .append($.commentIcon)
             .append($.commentLink)
             .append($('<i>', {text: '|'}))
             .append(post.date);

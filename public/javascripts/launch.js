@@ -272,8 +272,6 @@ const build = {
                 build.post(post);
                 build.postInfo(post);                
             }
-            // EXECUTE DISQUS
-            DISQUSWIDGETS.getCount();
             // NEXT HANDLER
             if(data.nextPageToken != undefined) {
                 $('#nextPage').parent().removeClass('disabled');
@@ -303,6 +301,8 @@ const build = {
             cp = page;
             sessionStorage.setItem('currentPage', cp);
             sessionStorage.setItem('tokens', JSON.stringify(tokens));
+            // EXECUTE DISQUS
+            DISQUSWIDGETS.getCount();
         });        
     }
 }

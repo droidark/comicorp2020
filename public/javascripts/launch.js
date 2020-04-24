@@ -3,7 +3,7 @@ const authors = {
         name: 'Erre Erregon',
         avatar: 'https://yt3.ggpht.com/a/AATXAJxxoUr5OqGoMLqJeqTNTG4P50s24DbRn510yA=s88-c-k-c0x00ffffff-no-rj',
         link: 'http://orgullogeekr.blogspot.com',
-        about: 'Un pobre diablo que habla sobre películas que ve en el cine cuando el boleto le sale con descuento, en otras palabras: habla de Cine Barato.'
+        about: 'Un pobre diablo que habla sobre pel\u00EDculas que ve en el cine cuando el boleto le sale con descuento, en otras palabras: habla de Cine Barato.'
     },
     '16663121220987503262': {
         name: 'Fozz',
@@ -15,7 +15,7 @@ const authors = {
         name: 'Eduflas',
         avatar: 'https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_200x200.jpg',
         link: 'https://twitter.com/eduflass',
-        about: 'Elemento lento, torpe y débil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
+        about: 'Elemento lento, torpe y d\u00E9bil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
     }
 };
 const colors = [ 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
@@ -181,12 +181,13 @@ const build = {
             .append($.userImage)
             .append(config.by + post.author.name);
         $.labelLink = $('<a>', {href: config.searchLabel() + post.labels[0], text: post.labels[0]})
+        $.commentLink = $('<a>', {href: post.link + config.disqusId});
         $.postInfo
             .append($.userLink)
             .append($('<i>', {text: '|'}))
             .append($.labelLink)
             .append($('<i>', {text: '|'}))
-            .append('<a href="'+ post.link +'#disqus_thread"></a>')
+            .append($.commentLink)
             .append($('<i>', {text: '|'}))
             .append(post.date);
         $('#neon').append($.postInfo);
@@ -324,6 +325,7 @@ const config = {
     afterText: '...',
     readMore: 'Leer M\u00E1s',
     publishBy: 'Publicado por ',
+    disqusId: '#disqus_thread',
     by: 'por ',
     searchLabel: () => {
        return config.blogUrl + 'search/label/';

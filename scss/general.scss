@@ -19,6 +19,7 @@ a {
     padding-bottom: 1rem;
 }
 // BG COLOR
+.bg-black { background-color: $black; }
 .bg-blue { background-color: $blue; }
 .bg-green { background-color: $green; }
 .bg-orange { background-color: $orange; }
@@ -28,6 +29,7 @@ a {
 .bg-yellow { background-color: $yellow; }
 
 // TEXT COLOR
+.blacl { color: $black !important; }
 .blue { color: $blue !important; }
 .green { color: $green !important; }
 .orange { color: $orange !important; };

@@ -18,7 +18,7 @@ const authors = {
         about: 'Elemento lento, torpe y d\u00E9bil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
     }
 };
-const colors = [ 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
+const colors = [ 'black', 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
 
 const util = {
     getAuthor: (author) => {
@@ -34,12 +34,12 @@ const util = {
     },
     getColor: (score) => {
         return score == null
-            ? colors[(Math.floor(Math.random() * 7))]
+            ? colors[(Math.floor(Math.random() * 8))]
             : score.color == null 
-                ? colors[(Math.floor(Math.random() * 7))]
+                ? colors[(Math.floor(Math.random() * 8))]
                 : colors.find(e => e == score.color) != undefined
                     ? score.color
-                    : colors[(Math.floor(Math.random() * 7))];
+                    : colors[(Math.floor(Math.random() * 8))];
     },
     getDate: (date) => {
         const d = new Date(date);

@@ -423,6 +423,10 @@ $(() => {
             $('#author-footer .card-block a.card-title').attr({
                 href: post.author.link}).append(post.author.name);
             $('#author-footer .card-block p.card-text').append(post.author.about);
+            // BACKGROUND IMAGE
+            post.thumb = util.getFirstImage(data.content);
+            $('body').css({'background-image': post.thumb});
+            // SCORE
             if($('#score').length) {
                 post.score = util.getScore(data.content);
                 post.color = util.getColor(post.score);

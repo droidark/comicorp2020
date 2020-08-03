@@ -425,7 +425,7 @@ $(() => {
             $('#author-footer .card-block p.card-text').append(post.author.about);
             // BACKGROUND IMAGE
             post.thumb = util.getFirstImage(data.content);
-            $('body').css({'background-image': post.thumb});
+            $('body').css({'background-image': 'url(\'' + post.thumb +'\')'});
             // SCORE
             if($('#score').length) {
                 post.score = util.getScore(data.content);

@@ -316,14 +316,14 @@ const darkMode = {
             $('body').addClass('dark-mode');
             $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
             $('#dark-mode + label').addClass('text-light');
-            $('.sidebar .title-wrapper').addClass('title-wrapper-dunkel');
+            $('.sidebar .title-wrapper, #Blog1 .title-wrapper').addClass('title-wrapper-dunkel');
             $('#previousPage, #nextPage').addClass('btn btn-dark active');
         } else {
             $('body').removeClass('dark-mode');
             $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
             $('#dark-mode + label').removeClass('text-light');
             $('.sidebar .title-wrapper').removeClass('title-wrapper-dunkel');
-            $('#previousPage, #nextPage').removeClass('btn btn-dark active');
+            $('#previousPage, #nextPage, #Blog1 .title-wrapper').removeClass('btn btn-dark active');
         }
     }
 };

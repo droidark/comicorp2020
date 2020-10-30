@@ -99,7 +99,7 @@
     border-radius: 0;
     margin-bottom: .25em;
     .card-header {
-        background-color: $left-thumb-header-bg-color;
+        background-color: var(--card-bg-color);
         img {
             width: 6rem;
             height: 6rem;

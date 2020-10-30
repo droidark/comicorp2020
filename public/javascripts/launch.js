@@ -307,7 +307,26 @@ const build = {
             DISQUSWIDGETS.getCount({reset: true});
         });        
     }
-}
+};
+const darkMode = {
+    enableDark: (isDark) => {
+        localStorage.setItem('darkMode', isDark);
+        $('#dark-mode').prop('checked', isDark);
+        if(isDark) {
+            $('body').addClass('dark-mode');
+            $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
+            $('#dark-mode + label').addClass('text-light');
+            $('.sidebar .title-wrapper').addClass('title-wrapper-dunkel');
+            $('#previousPage, #nextPage').addClass('btn btn-dark active');
+        } else {
+            $('body').removeClass('dark-mode');
+            $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
+            $('#dark-mode + label').removeClass('text-light');
+            $('.sidebar .title-wrapper').removeClass('title-wrapper-dunkel');
+            $('#previousPage, #nextPage').removeClass('btn btn-dark active');
+        }
+    }
+};
 const agMarqueeOptions = {
     duration: 20500,
     gap: 0,
@@ -372,7 +391,17 @@ $(() => {
     const tokens = {1: '-'};
     sessionStorage.setItem('currentPage', 1);
     sessionStorage.setItem('tokens', JSON.stringify(tokens));
-       
+
+    // DARK MODE INITIALIZER
+    const isDark = localStorage.getItem('darkMode') == null 
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches 
+        : localStorage.getItem('darkMode').toLowerCase() == 'true' ? true : false;
+    darkMode.enableDark(isDark);
+    
+    // DARK MODE SWITCH
+    $('#dark-mode').on('change', (e) => {
+        darkMode.enableDark($('#dark-mode').is(':checked'));
+    });       
 
     // INDEX
     if(pageType == 'index') {

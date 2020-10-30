@@ -1,5 +1,6 @@
 // COLORS
-$black: #000;
+$black-light: #000;
+$black-dark: #d1d1d1;
 $blue: #00d5ed;
 $green: #60d600;
 $orange: #ff8000;
@@ -32,7 +33,8 @@ $social-top-fa-twitter:#55ACEE;
 $social-top-fa-facebook:#3B5998;
 
 // NAVBAR TRIANGLES
-$navbar-triangle-color: #f8f9fa;
+$navbar-triangle-color-light: #f8f9fa;
+$navbar-triangle-color-dark: #1b1f23;
 
 // NEWSBAR
 $newsbar-bg: #23282D;
@@ -45,14 +47,16 @@ $breadcums-color: #fff;
 $breadcums-active-color: #25c2f5;
 
 // MAIN
-$main-bg-color: #fbfbfb;
+$main-bg-color-light: #fbfbfb;
+$main-bg-color-dark: #1b1f23;
 $main-title-color: #25c2f5;
 $main-title-color-hover: #666;
 $main-tab-color: #333;
+$main-bg-dark: #1b1f23;
 
 // POST-BODY
 $post-body-bg-color: #fff;
-$post-body-border-color: #eaeaea;
+$post-body-border-color: rgba(0, 0, 0, .125);
 $post-body-txt-color: #666;
 $post-body-link-color: #25c2f5;
 $post-body-link-color-hover: #666;
@@ -66,6 +70,15 @@ $post-labels-link-txt-color: #666;
 $post-labels-link-bg-color: #fbfbfb;
 $post-labels-link-bg-color-hover: #25c2f5;
 $post-labels-link-txt-color-hover: #fff;
+
+$post-review-bg-color-light: #fbfbfb;
+$post-review-bg-color-dark: #262a2d;
+$post-review-bdr-color-light: #eaeaea;
+$post-review-bdr-color-dark: #4e4e4e;
+
+// POST INFO
+$post-info-txt-color-light: #999;
+$post-info-txt-color-dark: #666;
 
 // SIDEBAR
 $soc-icon-da: #00e59b;
@@ -81,7 +94,6 @@ $soc-icon-steam: #000;
 $soc-icon-dailymotion: #232323;
 $soc-icon-instagram: #f40083;
 $soc-icon-spotify: #1DB954;
-$left-thumb-header-bg-color: #fff;
 
 // FOOTER
 $footer-bg-color: #23282D;
@@ -96,3 +108,30 @@ $dunkel-bg-color: #212528;
 $dunkel-hd-txt-color: #fff;
 $dunkel-card-bg-color: #181B1E;
 $dunkel-card-text-color: #ccc;
+
+// CARD [GLOBAL]
+$card-bg-color-light: #fff;
+$card-bg-color-dark: #1f2327;
+$card-txt-color-light: #666;
+$card-txt-color-dark: #bbbcbe;
+
+:root {
+    --black: #{$black-light};
+    --navbar-triangle-color: #{$navbar-triangle-color-light};
+    --main-bg-color: #{$main-bg-color-light};
+    --card-bg-color: #{$card-bg-color-light};
+    --card-txt-color: #{$card-txt-color-light};
+    --post-review-bg-color: #{$post-review-bg-color-light};
+    --post-review-bdr-color: #{$post-review-bdr-color-light};
+    --post-info-txt-color: #{$post-info-txt-color-light};
+}
+.dark-mode {
+    --black: #{$black-dark};
+    --navbar-triangle-color: #{$navbar-triangle-color-dark};
+    --main-bg-color: #{$main-bg-color-dark};
+    --card-bg-color: #{$card-bg-color-dark};
+    --card-txt-color: #{$card-txt-color-dark};
+    --post-review-bg-color: #{$post-review-bg-color-dark};
+    --post-review-bdr-color: #{$post-review-bdr-color-dark};
+    --post-info-txt-color: #{$post-info-txt-color-dark};
+}

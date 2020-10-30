@@ -1,7 +1,7 @@
 .main {
     width: 100%;
     padding: 2rem 0;
-    background-color: $main-bg-color;
+    background-color: var(--main-bg-color);
 }
 .title-wrapper {
     float: left;
@@ -110,7 +110,7 @@ h2.card-title {
 }
 .card-text {
     display: flow-root;
-    color:#666;
+    color: var(--card-txt-color);
     text-align: justify;
 }
 a.read-more {
@@ -125,8 +125,8 @@ a.read-more {
     }
 }
 .post-review {
-    background: #fbfbfb;
-    border: 1px solid #eaeaea;
+    background: var(--post-review-bg-color);
+    border: 1px solid var(--post-review-bdr-color);
     float: right;
     margin: 0 0 0 2rem;
     width: 18rem;
@@ -137,7 +137,7 @@ a.read-more {
         padding: 1rem;
     }
     ul {
-        border-top: 1px solid #EAEAEA;
+        border-top: 1px solid var(--post-review-bdr-color);
         list-style: none;
         margin: 0;
         margin-bottom: 0px;
@@ -146,8 +146,8 @@ a.read-more {
             padding: 15px 25px;
             font-family: 'Titillium Web';
             text-transform: uppercase;
-            color: #666;
-            border-bottom: 1px solid #EAEAEA;
+            color: var(--card-txt-color);
+            border-bottom: 1px solid var(--post-review-bdr-color);
         }
     }
     .score {
@@ -164,13 +164,13 @@ a.read-more {
     float: left;
     margin-top: 0px;
     width: 100%;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--post-review-bdr-color);
     padding: 1rem;
     margin-bottom: 2rem;
-    color: #999;
+    color: var(--post-info-txt-color);
     font-size: 12px;;
     a {
-        color: #999;
+        color: var(--post-info-txt-color);
         font-weight: normal;
     }
     img {
@@ -247,4 +247,7 @@ ul.posts-tab {
             }
         }
     }
+}
+.bg-dark {
+    background-color: $main-bg-dark !important;
 }

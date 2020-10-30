@@ -1,10 +1,10 @@
 .post-body {
     width: 100%;
     padding: 1rem 1.5rem;
-    background: $post-body-bg-color;
+    background: var(--card-bg-color);
     border: 1px solid $post-body-border-color;
     font-size: .95em;
-    color: $post-body-txt-color;
+    color: var(--card-txt-color);
     display: flow-root;
     a {
         color: $post-body-link-color;

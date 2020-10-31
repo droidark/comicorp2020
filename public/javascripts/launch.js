@@ -322,8 +322,8 @@ const darkMode = {
             $('body').removeClass('dark-mode');
             $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
             $('#dark-mode + label').removeClass('text-light');
-            $('.sidebar .title-wrapper').removeClass('title-wrapper-dunkel');
-            $('#previousPage, #nextPage, #Blog1 .title-wrapper').removeClass('btn btn-dark active');
+            $('.sidebar .title-wrapper, #Blog1 .title-wrapper').removeClass('title-wrapper-dunkel');
+            $('#previousPage, #nextPage').removeClass('btn btn-dark active');
         }
     }
 };

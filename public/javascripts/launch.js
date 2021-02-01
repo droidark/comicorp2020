@@ -78,7 +78,7 @@ const util = {
                     }
                 }
             }
-            score['average'] = Math.floor(score['average'] / ((Object.keys(score).length) - 2));
+            score['average'] = Math.ceil(score['average'] / ((Object.keys(score).length) - 2));
             return score;
         }
         return null;
@@ -110,6 +110,7 @@ const util = {
 
 const buildScore = {
     complete: (score, farbe) => {
+        console.log(score);
         const max = 5;
         let clase = '';
         $.postReview = $('<div>', {class: 'post-review'});
@@ -117,11 +118,17 @@ const buildScore = {
         $.ul = $('<ul>');
         for (const criteria in score) {
             if(criteria != 'color' && criteria != 'average') {
-                $.span = $('<span>', {class: 'score ' + farbe});
-                for(let i = 0; i < max; i++) {
-                    clase = i < score[criteria] ? 'fas fa-star' : 'far fa-star';
-                    $.i = $('<i>', {class: clase});
+                const klass = score.average === 0 ? 'brown' : farbe;
+                $.span = $('<span>', {class: 'score ' + klass});
+                if (score.average === 0) {
+                    $.i = $('<i>', {class: 'fas fa-poo'});
                     $.span.append($.i);
+                } else {
+                    for(let i = 0; i < max; i++) {
+                        clase = i < score[criteria] ? 'fas fa-star' : 'far fa-star';
+                        $.i = $('<i>', {class: clase});
+                        $.span.append($.i);
+                    }
                 }
                 $.li = $('<li>', {text: criteria});
                 $.li.append($.span);
@@ -138,7 +145,7 @@ const buildScore = {
         let clase = '';
         $.container = $('<div>', {class: classes + ' ' + farbe});
         if (average === 0) {
-            $.i = $('<i>', {class: 'fas fa-poop brown'});
+            $.i = $('<i>', {class: 'fas fa-poo brown'});
             $.container.append($.i);
         } else {
             for(let i = 0; i < max; i++) {

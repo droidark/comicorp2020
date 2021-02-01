@@ -139,13 +139,14 @@ const buildScore = {
         $.container = $('<div>', {class: classes + ' ' + farbe});
         if (average === 0) {
             $.i = $('<i>', {class: 'fas fa-poop brown'});
+            $.container.append($.i);
         } else {
             for(let i = 0; i < max; i++) {
                 clase = i < average ? 'fas fa-star' : 'far fa-star';
                 $.i = $('<i>', {class: clase});
+                $.container.append($.i);
             }
         }
-        $.container.append($.i);
         return $.container;
     }
 }

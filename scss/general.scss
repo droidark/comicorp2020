@@ -21,6 +21,7 @@ a {
 // BG COLOR
 .bg-black { background-color: var(--black); }
 .bg-blue { background-color: $blue; }
+.bg-brown { background-color: $brown; }
 .bg-green { background-color: $green; }
 .bg-orange { background-color: $orange; }
 .bg-pink { background-color: $pink; }
@@ -31,6 +32,7 @@ a {
 // TEXT COLOR
 .black { color: var(--black) !important; }
 .blue { color: $blue !important; }
+.brown { color: $brown !important; }
 .green { color: $green !important; }
 .orange { color: $orange !important; };
 .pink { color: $pink !important; }

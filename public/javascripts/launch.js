@@ -7,7 +7,7 @@ const authors = {
     },
     '16663121220987503262': {
         name: 'Fozz',
-        avatar: 'https://pbs.twimg.com/profile_images/1234328437688610817/ABIndXV3_200x200.jpg',
+        avatar: 'https://pbs.twimg.com/profile_images/1355709275650199552/iy2qEmhS_200x200.jpg',
         link: 'http://marvelmx.blogspot.com',
         about: 'Unico sobreviviente de este blog, desde 2009.'
     },

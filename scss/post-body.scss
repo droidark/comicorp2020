@@ -146,7 +146,7 @@
         padding: .3rem .7rem;
         margin-bottom: 1rem;
         display: inline-block;
-        color: $post-labels-link-txt-color;
+        color: var(--post-labels-link-txt-color);
         background: var(--post-labels-link-bg-color);
         @include radius(5px);
         &:hover {

@@ -119,7 +119,7 @@
             text-decoration: none;
             color: $post-author-link-color;
             &:hover {
-                color: $post-author-link-color-hover;
+                color: var(--post-author-link-color-hover);
             }
         }
         @include only-xs {

@@ -65,7 +65,8 @@ $post-body-link-color-hover-light: #666;
 $post-body-link-color-hover-dark: #fff;
 $post-body-blockquote-txt-color: #888;
 $post-author-link-color: #25c2f5;
-$post-author-link-color-hover: #666;
+$post-author-link-color-hover-light: #666;
+$post-author-link-color-hover-dark: #fff;
 $post-body-spotify-link-color: #1DB954;
 
 $post-labels-link-border-color-light: #eee;
@@ -134,7 +135,8 @@ $card-txt-color-dark: #bbbcbe;
     --post-labels-link-border-color: #{$post-labels-link-border-color-light};
     --post-labels-link-bg-color: #{$post-labels-link-bg-color-light};
     --post-labels-link-txt-color: #{$post-labels-link-txt-color-light};
-    --post-body-link-color-hover:#{$post-body-link-color-hover-light};
+    --post-body-link-color-hover: #{$post-body-link-color-hover-light};
+    --post-author-link-color-hover: #{$post-author-link-color-hover-light};
 }
 .dark-mode {
     --black: #{$black-dark};
@@ -150,4 +152,5 @@ $card-txt-color-dark: #bbbcbe;
     --post-labels-link-bg-color: #{$post-labels-link-bg-color-dark};
     --post-labels-link-txt-color: #{$post-labels-link-txt-color-dark};
     --post-body-link-color-hover:#{$post-body-link-color-hover-dark};
+    --post-author-link-color-hover: #{$post-author-link-color-hover-dark};
 }

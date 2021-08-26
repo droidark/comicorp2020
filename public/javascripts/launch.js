@@ -13,7 +13,7 @@ const authors = {
     },
     '07861633488260418247': {
         name: 'Eduflas',
-        avatar: 'https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_200x200.jpg',
+        avatar: 'https://pbs.twimg.com/profile_images/1353570845743001600/giwEeZ-0_200x200.jpg',
         link: 'https://twitter.com/eduflass',
         about: 'Elemento lento, torpe y d\u00E9bil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
     }

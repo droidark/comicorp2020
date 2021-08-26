@@ -1,4 +1,8 @@
 # COMICORP 2020 TEMPLATE
+## RUN SCC COMPILER
+```shell
+    sass --watch scss\index.scss:public\stylesheets\style.css --style compressed
+```
 ## TEMPLATE IMAGES
 * pattern.png
     * https://1.bp.blogspot.com/-L6dkn6V3noM/XoabD6XRMtI/AAAAAAAABgo/7w0PjZH3Eb03_V58qChsaJ2SO4jTAgZpgCLcBGAsYHQ/s1600/pattern.png

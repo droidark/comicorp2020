@@ -139,7 +139,7 @@
 .post-labels {
     a {
         text-decoration: none;
-        border: 1px solid $post-labels-link-border-color;
+        border: 1px solid var(--post-labels-link-border-color);
         font-style: normal;
         font-size: .750em;
         font-weight: 700;
@@ -147,7 +147,7 @@
         margin-bottom: 1rem;
         display: inline-block;
         color: $post-labels-link-txt-color;
-        background: $post-labels-link-bg-color;
+        background: var(--post-labels-link-bg-color);
         @include radius(5px);
         &:hover {
             background-color: $post-labels-link-bg-color-hover;

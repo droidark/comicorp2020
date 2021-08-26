@@ -119,7 +119,7 @@
         padding: .5rem 0;
         .card-title {
             display: table;
-            color: $main-title-color-hover;
+            color: var(--main-title-color-hover);
             font-size: 0.875em;
             font-weight: bold;
             text-decoration: none;
@@ -140,7 +140,7 @@
             text-decoration: none;
             color: $main-title-color;
             &:hover {
-                color: $main-title-color-hover;
+                color: var(--main-title-color-hover);
             }
         }
     }

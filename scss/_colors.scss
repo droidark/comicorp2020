@@ -51,7 +51,8 @@ $breadcums-active-color: #25c2f5;
 $main-bg-color-light: #fbfbfb;
 $main-bg-color-dark: #1b1f23;
 $main-title-color: #25c2f5;
-$main-title-color-hover: #666;
+$main-title-color-hover-light: #666;
+$main-title-color-hover-dark: #ddd;
 $main-tab-color: #333;
 $main-bg-dark: #1b1f23;
 
@@ -66,9 +67,11 @@ $post-author-link-color: #25c2f5;
 $post-author-link-color-hover: #666;
 $post-body-spotify-link-color: #1DB954;
 
-$post-labels-link-border-color: #eee;
+$post-labels-link-border-color-light: #eee;
+$post-labels-link-border-color-dark: #171a1d;
 $post-labels-link-txt-color: #666;
-$post-labels-link-bg-color: #fbfbfb;
+$post-labels-link-bg-color-light: #fbfbfb;
+$post-labels-link-bg-color-dark: #181b1e;
 $post-labels-link-bg-color-hover: #25c2f5;
 $post-labels-link-txt-color-hover: #fff;
 
@@ -125,6 +128,9 @@ $card-txt-color-dark: #bbbcbe;
     --post-review-bg-color: #{$post-review-bg-color-light};
     --post-review-bdr-color: #{$post-review-bdr-color-light};
     --post-info-txt-color: #{$post-info-txt-color-light};
+    --main-title-color-hover: #{$main-title-color-hover-light};
+    --post-labels-link-border-color: #{$post-labels-link-border-color-light};
+    --post-labels-link-bg-color: #{$post-labels-link-bg-color-light};
 }
 .dark-mode {
     --black: #{$black-dark};
@@ -135,4 +141,7 @@ $card-txt-color-dark: #bbbcbe;
     --post-review-bg-color: #{$post-review-bg-color-dark};
     --post-review-bdr-color: #{$post-review-bdr-color-dark};
     --post-info-txt-color: #{$post-info-txt-color-dark};
+    --main-title-color-hover: #{$main-title-color-hover-dark};
+    --post-labels-link-border-color: #{$post-labels-link-border-color-dark};
+    --post-labels-link-bg-color: #{$post-labels-link-bg-color-dark};
 }

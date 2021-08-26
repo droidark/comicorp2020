@@ -51,7 +51,7 @@ h2.card-title {
         color: $main-title-color;
         text-decoration: none;
         &:hover {
-            color: $main-title-color-hover;            
+            color: var(--main-title-color-hover);
         }
     }
 }
@@ -238,7 +238,7 @@ ul.posts-tab {
                 h2.card-title {
                     font-size: 1.125em;
                     a {
-                        color: $main-title-color-hover;
+                        color: var(--main-title-color-hover);
                         &:hover {
                             color: $main-title-color;
                         }

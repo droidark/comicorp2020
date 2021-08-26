@@ -326,14 +326,12 @@ const darkMode = {
         $('#dark-mode').prop('checked', isDark);
         if(isDark) {
             $('body').addClass('dark-mode');
-            $('iframe').contents().find('body').addClass('dark');
             $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
             $('#dark-mode + label').addClass('text-light');
             $('.sidebar .title-wrapper, #Blog1 .title-wrapper').addClass('title-wrapper-dunkel');
             $('#previousPage, #nextPage').addClass('btn btn-dark active');
         } else {
             $('body').removeClass('dark-mode');
-            $('iframe').contents().find('body').removeClass('dark');
             $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
             $('#dark-mode + label').removeClass('text-light');
             $('.sidebar .title-wrapper, #Blog1 .title-wrapper').removeClass('title-wrapper-dunkel');

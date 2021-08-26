@@ -132,6 +132,7 @@ $card-txt-color-dark: #bbbcbe;
     --main-title-color-hover: #{$main-title-color-hover-light};
     --post-labels-link-border-color: #{$post-labels-link-border-color-light};
     --post-labels-link-bg-color: #{$post-labels-link-bg-color-light};
+    --post-labels-link-txt-color: #{$post-labels-link-txt-color-light};
 }
 .dark-mode {
     --black: #{$black-dark};
@@ -145,4 +146,5 @@ $card-txt-color-dark: #bbbcbe;
     --main-title-color-hover: #{$main-title-color-hover-dark};
     --post-labels-link-border-color: #{$post-labels-link-border-color-dark};
     --post-labels-link-bg-color: #{$post-labels-link-bg-color-dark};
+    --post-labels-link-txt-color: #{$post-labels-link-txt-color-dark};
 }

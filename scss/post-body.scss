@@ -16,14 +16,14 @@
         color: $post-body-link-color;
         text-decoration: none;
         &:hover {
-            color: $post-body-link-color-hover;
+            color: var(--post-body-link-color-hover);
         }
     }
     a.spotify {
         color: $post-body-spotify-link-color;
         font-weight: bold;
         &:hover {
-            color: $post-body-link-color-hover;
+            color: var(--post-body-link-color-hover);
         }
         i {
             margin-right: .2rem;

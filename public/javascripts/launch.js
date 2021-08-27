@@ -330,12 +330,14 @@ const darkMode = {
             $('#dark-mode + label').addClass('text-light');
             $('.sidebar .title-wrapper, #Blog1 .title-wrapper').addClass('title-wrapper-dunkel');
             $('#previousPage, #nextPage').addClass('border border-dark bg-dark');
+            $('#dropdown-menu').addClass('dropdown-menu-dark');
         } else {
             $('body').removeClass('dark-mode');
             $('.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-light');
             $('#dark-mode + label').removeClass('text-light');
             $('.sidebar .title-wrapper, #Blog1 .title-wrapper').removeClass('title-wrapper-dunkel');
             $('#previousPage, #nextPage').removeClass('border border-dark bg-dark');
+            $('#dropdown-menu').removeClass('dropdown-menu-dark');
         }
     }
 };

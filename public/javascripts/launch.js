@@ -390,8 +390,8 @@ $.ajaxSetup({
 });
 
 // TOOLTIP
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
@@ -435,7 +435,7 @@ $(() => {
             build.index(nextPage, 'next');
             $('html, body').animate({
                 scrollTop: $('#neon').offset().top
-            }, 2000);
+            }, 'slow');
         });
 
         // PREVIOUS PAGE
@@ -445,7 +445,7 @@ $(() => {
             build.index(previousPage, 'previous');
             $('html, body').animate({
                 scrollTop: $('#neon').offset().top
-            }, 2000);
+            }, 'slow');
         });
     } else if(pageType == 'item') {
         const postId = $('#postId').val();

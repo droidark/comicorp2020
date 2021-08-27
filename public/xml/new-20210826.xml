@@ -174,7 +174,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class='navbar-toggler-icon'/>
           </button>
-          <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <div class='collapse navbar-collapse px-2' id='navbarSupportedContent'>
             <ul class='navbar-nav mr-auto'>
               <li class='nav-item'>
                 <a class='nav-link' href='https://comicorp.blogspot.com/search/label/Cine'>Cine Barato</a>

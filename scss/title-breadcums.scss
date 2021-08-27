@@ -9,7 +9,7 @@
     }
     .breadcrumb {
         background-color: transparent;
-        margin: auto;
+        justify-content: center;
         .breadcrumb-item {
             color: $breadcums-color;
             &::before {

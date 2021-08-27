@@ -171,7 +171,7 @@
             <img alt='' class='d-inline-block align-top logo' src='https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg'/>
             <data:blog.title.escaped/>
           </a>
-          <button aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarSupportedContent' data-toggle='collapse' type='button'>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class='navbar-toggler-icon'/>
           </button>
           <div class='collapse navbar-collapse' id='navbarSupportedContent'>
@@ -190,7 +190,7 @@
               </li>
               <li class='nav-item dropdown'>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cómics</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Marvel'>Marvel</a></li>
                     <li><a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/DC'>DC</a></li>
                     <li><a class='dropdown-item' href='https://comicorp.blogspot.com/search/label/Image'>Image</a></li>
@@ -730,7 +730,7 @@
             <b:section class='col-lg-4 sidebar' id='sidebar' maxwidgets='' showaddelements='yes'>
               <b:widget id='HTML1' locked='false' title='REDES SOCIALES' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
-                  <b:widget-setting name='content'><![CDATA[<a class='soc-icons-twitter' href='https://twitter.com/comicorp' data-toggle='tooltip' data-original-title='Twitter'><i class='fab fa-twitter'/></i></a><a class='soc-icons-facebook' href='https://www.facebook.com/comicorp' data-toggle='tooltip' data-original-title='Facebook'><i class='fab fa-facebook-f'/></i></a><a class='soc-icons-instagram' href='https://instagram.com/comicorp/' data-toggle='tooltip' data-original-title='Instagram'><i class='fab fa-instagram'/></i></a><a class='soc-icons-youtube' href='https://www.youtube.com/channel/UCu9kQTr2ITsbg09_xfK7Aig' data-toggle='tooltip' data-original-title='YouTube'><i class='fab fa-youtube'/></i></a><a class='soc-icons-dailymotion' href='https://www.dailymotion.com/comicorp' data-toggle='tooltip' data-original-title='Dailymotion'><i class='fab fa-dailymotion'/></i></a><a class='soc-icons-twitch' href='https://www.twitch.tv/comicorp' data-toggle='tooltip' data-original-title='Twitch'><i class='fab fa-twitch'/></i></a><a class='soc-icons-spotify' href='https://www.spotify.com' data-toggle='tooltip' data-original-title='Spotify'><i class='fab fa-spotify'/></i></a><a class='soc-icons-snapchat' href='https://www.snapchat.com' data-toggle='tooltip' data-original-title='Snapchat'><i class='fab fa-snapchat-ghost'/></i></a><a class='soc-icons-vimeo' href='https://vimeo.com/comicorp' data-toggle='tooltip' data-original-title='Vimeo'><i class='fab fa-vimeo-v'/></i></a><a class='soc-icons-rss' href='https://comicorp.blogspot.com/feeds/posts/default?alt=rss' data-toggle='tooltip' data-original-title='RSS'><i class='fas fa-rss'/></i></a>]]></b:widget-setting>
+                  <b:widget-setting name='content'><![CDATA[<a class='soc-icons-twitter' href='https://twitter.com/comicorp' data-bs-toggle='tooltip' title='Twitter'><i class='fab fa-twitter'/></i></a><a class='soc-icons-facebook' href='https://www.facebook.com/comicorp' data-bs-toggle='tooltip' title='Facebook'><i class='fab fa-facebook-f'/></i></a><a class='soc-icons-instagram' href='https://instagram.com/comicorp/' data-bs-toggle='tooltip' title='Instagram'><i class='fab fa-instagram'/></i></a><a class='soc-icons-youtube' href='https://www.youtube.com/channel/UCu9kQTr2ITsbg09_xfK7Aig' data-bs-toggle='tooltip' title='YouTube'><i class='fab fa-youtube'/></i></a><a class='soc-icons-dailymotion' href='https://www.dailymotion.com/comicorp' data-bs-toggle='tooltip' title='Dailymotion'><i class='fab fa-dailymotion'/></i></a><a class='soc-icons-twitch' href='https://www.twitch.tv/comicorp' data-bs-toggle='tooltip' title='Twitch'><i class='fab fa-twitch'/></i></a><a class='soc-icons-spotify' href='https://www.spotify.com' data-bs-toggle='tooltip' title='Spotify'><i class='fab fa-spotify'/></i></a><a class='soc-icons-snapchat' href='https://www.snapchat.com' data-bs-toggle='tooltip' title='Snapchat'><i class='fab fa-snapchat-ghost'/></i></a><a class='soc-icons-vimeo' href='https://vimeo.com/comicorp' data-bs-toggle='tooltip' title='Vimeo'><i class='fab fa-vimeo-v'/></i></a><a class='soc-icons-rss' href='https://comicorp.blogspot.com/feeds/posts/default?alt=rss' data-bs-toggle='tooltip' title='RSS'><i class='fas fa-rss'/></i></a><a class='soc-icons-discord' href='https://discord.com/invite/ayZS7vCwEP' data-bs-toggle='tooltip' title='Discord'><i class="fab fa-discord"></i></a>]]></b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
                   <div class='title-wrapper'>
@@ -745,7 +745,7 @@
               </b:widget>
               <b:widget id='HTML2' locked='false' title='CINE BARATO' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
-                  <b:widget-setting name='content'><![CDATA[<iframe src="https://www.youtube.com/embed/Bi96j5d6CQM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></b:widget-setting>
+                  <b:widget-setting name='content'><![CDATA[<iframe src="https://www.youtube.com/embed/ovQh4xH9QvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
                   <div class='title-wrapper'>

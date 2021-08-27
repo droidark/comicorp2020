@@ -15,6 +15,9 @@ $up-lg-min: 992px;
 // EXTRA LARGE DEVICES
 $up-xl-min: 1200px;
 
+// EXTRA-EXTRA LARGE DEVICES
+$up-xxl-min: 1400px;
+
 
 // +--------------------------------+
 // | D O W N  B R E A K P O I N T S |
@@ -31,6 +34,9 @@ $down-md-max: 991.98px;
 
 // LARGE DEVICES
 $down-lg-max: 1199.98px;
+
+// EXTRA LARGE DEVICES
+$down-xl-max: 1399.98px;
 
 
 // +--------------------------------+
@@ -54,3 +60,7 @@ $only-lg-max: 1199.98px;
 
 // EXTRA LARGE DEVICES
 $only-xl-min: 1200px;
+$only-xl-max: 1399.98px;
+
+// EXTRA-EXTRA LARGE DEVICES
+$only-xxl-min: 1400px;

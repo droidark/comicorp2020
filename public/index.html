@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
     <!-- Awesome Fonts CSS -->
     <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
@@ -66,7 +66,7 @@
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
               <img src="https://combinatronics.com/droidark/comicorp2020/develop/public/images/logo.svg" class="d-inline-block align-top logo" alt="">COMICORP</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"   aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"   aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -78,23 +78,22 @@
                   <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
               </ul>
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="dark-mode">
-                <label class="custom-control-label" for="dark-mode">Dark Mode</label>
+              <div class="form-check form-switch ms-auto">
+                <input type="checkbox" class="form-check-input" id="dark-mode">
+                <label class="form-check-label" for="dark-mode">Dark Mode</label>
               </div>
             </div>
           </nav>
@@ -120,10 +119,10 @@
         <div class="container">
           <div class="ticker-title"><i class="fa fa-bullhorn"></i>LATEST NEWS</div>
           <div class="news">
-            <span class="badge badge-primary">Adventure</span><a href="#">Mauris sed urna dui. Aenean consequat non ex eget congue</a>
-            <span class="badge badge-warning">Strategy</span><a href="#">Vestibulum ut dignissim tellus</a>
-            <span class="badge badge-success">Shooters</span><a href="#">Integer quis orci nisi auguros grantos cibilia lorbos</a>
-            <span class="badge badge-danger">Comics</span><a href="#">Mollis leo semper dictum ras ut magna met</a>
+            <span class="badge bg-primary">Adventure</span><a href="#">Mauris sed urna dui. Aenean consequat non ex eget congue</a>
+            <span class="badge bg-warning">Strategy</span><a href="#">Vestibulum ut dignissim tellus</a>
+            <span class="badge bg-success">Shooters</span><a href="#">Integer quis orci nisi auguros grantos cibilia lorbos</a>
+            <span class="badge bg-danger">Comics</span><a href="#">Mollis leo semper dictum ras ut magna met</a>
           </div>          
         </div>
       </div>
@@ -198,12 +197,12 @@
                 </div>                
               </div>
               <div class="post-pinfo">
-                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" data-original-title="View all posts by Eduflas" data-toggle="tooltip">
+                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" title="View all posts by Eduflas" data-bs-toggle="tooltip">
                   <img src="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg" class="avatar avatar-60 photo authorimg" alt="author image" srcset="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 150w, https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 165w, https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg 209w" sizes="(max-width: 60px) 100vw, 60px" width="60" height="60">by Eduflas</a>
                   <i>|</i>
                   <a href="https://skywarriorthemes.com/crystalskull/category/strategy/"> Strategy  </a>
                   <i>|</i>
-                  <a data-original-title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-toggle="tooltip">
+                  <a title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-bs-toggle="tooltip">
                     0 Comments</a>
                   <i>|</i>
                   <span class="date">31 Oct 2015</span>
@@ -269,12 +268,12 @@
                 </div>                
               </div>
               <div class="post-pinfo">
-                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" data-original-title="View all posts by Fozz" data-toggle="tooltip">
+                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" title="View all posts by Fozz" data-bs-toggle="tooltip">
                   <img src="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif" class="avatar avatar-60 photo authorimg" alt="author image" srcset="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 150w, https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 165w, https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 209w" sizes="(max-width: 60px) 100vw, 60px" width="60" height="60">by Fozz</a>
                   <i>|</i>
                   <a href="https://skywarriorthemes.com/crystalskull/category/strategy/"> Strategy  </a>
                   <i>|</i>
-                  <a data-original-title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-toggle="tooltip">
+                  <a title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-bs-toggle="tooltip">
                     0 Comments</a>
                   <i>|</i>
                   <span class="date">31 Oct 2015</span>
@@ -340,12 +339,12 @@
                 </div>                
               </div>
               <div class="post-pinfo clear">
-                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" data-original-title="View all posts by Fozz" data-toggle="tooltip">
+                <a href="https://skywarriorthemes.com/crystalskull/author/admin/" title="View all posts by Fozz" data-bs-toggle="tooltip">
                   <img src="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif" class="avatar avatar-60 photo authorimg" alt="author image" srcset="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 150w, https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 165w, https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif 209w" sizes="(max-width: 60px) 100vw, 60px" width="60" height="60">by Fozz</a>
                   <i>|</i>
                   <a href="https://skywarriorthemes.com/crystalskull/category/strategy/"> Strategy  </a>
                   <i>|</i>
-                  <a data-original-title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-toggle="tooltip">
+                  <a title="No comments in this post" href="https://skywarriorthemes.com/crystalskull/rasutmagnamet/#comments" data-bs-toggle="tooltip">
                     0 Comments</a>
                   <i>|</i>
                   <span class="date">31 Oct 2015</span>
@@ -357,13 +356,13 @@
               <div class="clear"></div>
               <ul class="nav nav-tabs posts-tab clear" id="myTab" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" id="marvel-tab" data-toggle="tab" href="#marvel" role="tab" aria-controls="marvel" aria-selected="true">Marvel</a>
+                  <a class="nav-link active" id="marvel-tab" data-bs-toggle="tab" href="#marvel" role="tab" aria-controls="marvel" aria-selected="true">Marvel</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="dc-tab" data-toggle="tab" href="#dc" role="tab" aria-controls="dc" aria-selected="false">DC</a>
+                  <a class="nav-link" id="dc-tab" data-bs-toggle="tab" href="#dc" role="tab" aria-controls="dc" aria-selected="false">DC</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="indie-tab" data-toggle="tab" href="#indie" role="tab" aria-controls="indie" aria-selected="false">Indie</a>
+                  <a class="nav-link" id="indie-tab" data-bs-toggle="tab" href="#indie" role="tab" aria-controls="indie" aria-selected="false">Indie</a>
                 </li>
               </ul>
               <div class="tab-content tab-post-content" id="myTabContent">
@@ -389,7 +388,7 @@
                             <p class="post-meta">
                               <img class="avatar" src="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif" alt="Fozz Avatar" />
                               por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                              <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                              <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                             </p>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           </div>
@@ -410,7 +409,7 @@
                                 <h2 class="card-title"><a href="#">HOX / POX</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -430,7 +429,7 @@
                                 <h2 class="card-title"><a href="#">Daredevil: Born Again</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -450,7 +449,7 @@
                                 <h2 class="card-title"><a href="#">Civil War</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -482,7 +481,7 @@
                             <p class="post-meta">
                               <img class="avatar" src="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif" alt="Fozz Avatar" />
                               por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                              <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                              <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                             </p>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           </div>
@@ -503,7 +502,7 @@
                                 <h2 class="card-title"><a href="#">Watchmen</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -523,7 +522,7 @@
                                 <h2 class="card-title"><a href="#">Batman: The Long Halloween</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -543,7 +542,7 @@
                                 <h2 class="card-title"><a href="#">Superman: Red Son</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -575,7 +574,7 @@
                             <p class="post-meta">
                               <img class="avatar" src="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg" alt="Fozz Avatar" />
                               por <a href="#">Eduflas</a> el 31 de octubre, 2020 con 
-                              <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                              <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                             </p>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           </div>
@@ -596,7 +595,7 @@
                                 <h2 class="card-title"><a href="#">The Black Monday Murders</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -616,7 +615,7 @@
                                 <h2 class="card-title"><a href="#">The Umbrella Academy</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -636,7 +635,7 @@
                                 <h2 class="card-title"><a href="#">The October Faction</a></h2>
                                 <p class="post-meta">
                                   por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                                  <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                                  <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                                 </p>
                               </div>
                             </div>
@@ -673,7 +672,7 @@
                         <p class="post-meta">
                           <img class="avatar" src="https://pbs.twimg.com/profile_images/1031904202631467009/S_oXlr4E_400x400.jpg" alt="Fozz Avatar" />
                           por <a href="#">Eduflas</a> el 31 de octubre, 2020 con 
-                          <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                          <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                         </p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                       </div>
@@ -698,7 +697,7 @@
                         <p class="post-meta">
                           <img class="avatar" src="https://i.pinimg.com/originals/bd/2b/39/bd2b39398f703f2e9899824da4fa183b.gif" alt="Fozz Avatar" />
                           por <a href="#">Fozz</a> el 31 de octubre, 2020 con 
-                          <a href="#" data-original-title="No comments in this post" data-toggle="tooltip">3 <i class="far fa-comments"></i></a>
+                          <a href="#" title="No comments in this post" data-bs-toggle="tooltip">3 <i class="far fa-comments"></i></a>
                         </p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                       </div>
@@ -714,16 +713,17 @@
             </div>
             <div class="container clear px-0">
               <div class="row soc-icons">
-                <a class="soc-icons-twitter" href="#" data-toggle="tooltip" data-original-title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a class="soc-icons-facebook" href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a class="soc-icons-instagram" href="#" data-toggle="tooltip" data-original-title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a class="soc-icons-youtube" href="#" data-toggle="tooltip" data-original-title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a class="soc-icons-dailymotion" href="#" data-toggle="tooltip" data-original-title="Dailymotion"><i class="fab fa-dailymotion"></i></a>
-                <a class="soc-icons-twitch" href="#" data-toggle="tooltip" data-original-title="Twitch"><i class="fab fa-twitch"></i></a>
-                <a class="soc-icons-spotify" href="#" data-toggle="tooltip" data-original-title="Spotify"><i class="fab fa-spotify"></i></a>
-                <a class="soc-icons-snapchat" href="#" data-toggle="tooltip" data-original-title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
-                <a class="soc-icons-vimeo" href="#" data-toggle="tooltip" data-original-title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
-                <a class="soc-icons-rss" href="#" data-toggle="tooltip" data-original-title="RSS"><i class="fas fa-rss"></i></a>
+                <a class="soc-icons-twitter" href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="soc-icons-facebook" href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="soc-icons-instagram" href="#" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a class="soc-icons-youtube" href="#" data-bs-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a class="soc-icons-dailymotion" href="#" data-bs-toggle="tooltip" title="Dailymotion"><i class="fab fa-dailymotion"></i></a>
+                <a class="soc-icons-twitch" href="#" data-bs-toggle="tooltip" title="Twitch"><i class="fab fa-twitch"></i></a>
+                <a class="soc-icons-spotify" href="#" data-bs-toggle="tooltip" title="Spotify"><i class="fab fa-spotify"></i></a>
+                <a class="soc-icons-snapchat" href="#" data-bs-toggle="tooltip" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                <a class="soc-icons-vimeo" href="#" data-bs-toggle="tooltip" title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+                <a class="soc-icons-rss" href="#" data-bs-toggle="tooltip" title="RSS"><i class="fas fa-rss"></i></a>
+                <a class="soc-icons-discord" href="#" data-bs-toggle="tooltip" title="Discord"><i class="fab fa-discord"></i></a>
               </div>
             </div>
             <div class="title-wrapper">
@@ -824,7 +824,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">The Umbrella Academy</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb">
@@ -840,7 +840,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Watchmen</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb">
@@ -856,7 +856,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Batman: The Long Halloween</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb">
@@ -872,7 +872,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Superman: Redson</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb">
@@ -888,7 +888,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Daredevil: Guardian Devil</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
             </div>
@@ -929,7 +929,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Daredevil: Guardian Devil</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb left-thumb-dunkel">
@@ -945,7 +945,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Superman: Redson</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb left-thumb-dunkel">
@@ -961,7 +961,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Batman: The Long Halloween</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb left-thumb-dunkel">
@@ -977,7 +977,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">Watchmen</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
               <div class="card left-thumb left-thumb-dunkel">
@@ -993,7 +993,7 @@
                 </div>
                 <div class="card-block">
                   <a class="card-title" href="#">The Umbrella Academy</a>
-                  <small class="card-text">By <a href="#" data-toggle="tooltip" data-original-title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
+                  <small class="card-text">By <a href="#" data-bs-toggle="tooltip" title="View all posts by Fozz">Fozz</a><i class="fas fa-calendar"></i> October 31, 2020</small>
                 </div>
               </div>
             </div>
@@ -1108,11 +1108,10 @@
     </div>
     <input type='hidden' id='pageType' name='pageType' value='index'/>
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js'></script>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js" integrity="sha512-JHJv/L48s1Hod24iSI0u9bcF/JlUi+YaxliKdbasnw/U1Lp9xxWkaZ3O5OuQPMkVwOVXeFkF4n4176ouA6Py3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="javascripts/launch.js"></script>
   </body>
 </html>

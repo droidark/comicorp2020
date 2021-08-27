@@ -25,7 +25,14 @@
 
 // EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
 @mixin up-xl {
-    @media (min-width: $up-lg-min) {
+    @media (min-width: $up-xl-min) {
+        @content;
+    }
+}
+
+// EXTRA-EXTRA LARGE DEVICES
+@mixin up-xxl {
+    @media (min-width: $up-xxl-min) {
         @content;
     }
 }
@@ -59,6 +66,13 @@
 // LARGE DEVICES (DESKTOPS, LESS THAN 1200PX)
 @mixin down-lg {
     @media (max-width: $down-lg-max) {
+        @content;
+    }
+}
+
+// EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
+@mixin down-xl {
+    @media (max-width: $down-xl-max) {
         @content;
     }
 }
@@ -98,7 +112,14 @@
 
 // EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
 @mixin only-xl {
-    @media (min-width: $only-xl-min) {
+    @media (min-width: $only-xl-min) and (max-width: $only-xl-max) {
+        @content;
+    }
+}
+
+// EXTRA LARGE DEVICES (LARGE DESKTOPS, 1200PX AND UP)
+@mixin only-xxl {
+    @media (min-width: $only-xxl-min) {
         @content;
     }
 }

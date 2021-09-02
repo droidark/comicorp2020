@@ -220,7 +220,7 @@ const build = {
                 post.thumb = util.getFirstImage(data.items[i].content);
                 post.score = util.getScore(data.items[i].content);
                 post.color = util.getColor(post.score);
-                $.calendar = $('<i>', {class: 'fas fa-calendar mr-2'});
+                $.calendar = $('<i>', {class: 'fas fa-calendar me-2'});
                 $.cardText = $('<small>', {class: 'card-text text-white'})
                     .append($.calendar)
                     .append(post.date);

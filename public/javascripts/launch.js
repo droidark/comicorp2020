@@ -15,13 +15,20 @@ const authors = {
         name: 'Eduflas',
         avatar: 'https://pbs.twimg.com/profile_images/1353570845743001600/giwEeZ-0_200x200.jpg',
         link: 'https://twitter.com/eduflass',
-        about: 'Elemento lento, torpe y d\u00E9bil que ocasionalmente escribe cosas sin sentido. No lo sigan.'
+        about: 'Los amo.'
+    },
+    '': {
+        name: 'Rubén Armenta (el monito)',
+        avatar: 'https://pbs.twimg.com/profile_images/1024663949/mono_200x200.jpg',
+        link: 'https://twitter.com/eduflass',
+        about: 'Yo nací en una Rivera del Arauca vibrador, soy hermano de los pumas, de las garzas de las rosas y del sol. (je je).'
     }
 };
 const colors = [ 'black', 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];
 
 const util = {
     getAuthor: (author) => {
+        console.log(author.id);
         if(authors[author.id] == undefined) {
             return {
                 name: author.displayName,

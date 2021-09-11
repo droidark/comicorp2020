@@ -17,7 +17,7 @@ const authors = {
         link: 'https://twitter.com/eduflass',
         about: 'Los amo.'
     },
-    '': {
+    '11346946014670287885': {
         name: 'Rubén Armenta (el monito)',
         avatar: 'https://pbs.twimg.com/profile_images/1024663949/mono_200x200.jpg',
         link: 'https://twitter.com/eduflass',

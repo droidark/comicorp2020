@@ -28,7 +28,6 @@ const colors = [ 'black', 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'y
 
 const util = {
     getAuthor: (author) => {
-        console.log(author.id);
         if(authors[author.id] == undefined) {
             return {
                 name: author.displayName,
@@ -93,18 +92,8 @@ const util = {
     getText: (data, title) => {
         const length = 500;
         const regex = /(\r\n|\n|\r)/gm;
-        // OPTION 2
-        // let text = $(data).text();
-        // OPTION 2
         let text = data.replace(/<[^>]*>?/gm, ' ').trim();
         if(text.length > 1) {
-            // OPTION 1
-            // text = text.trim()
-            //     .replace(regex, ' ')
-            //     .substring(0, length)
-            //     .trim();
-            // return text.substring(0, text.lastIndexOf(' '));
-            // OPTION 2
             text = text.trim()
                 .replace(regex, ' ')
                 .substring(0, length)
@@ -117,7 +106,6 @@ const util = {
 
 const buildScore = {
     complete: (score, farbe) => {
-        console.log(score);
         const max = 5;
         let clase = '';
         $.postReview = $('<div>', {class: 'post-review'});

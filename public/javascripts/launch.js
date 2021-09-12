@@ -18,7 +18,7 @@ const authors = {
         about: 'Los amo.'
     },
     '11346946014670287885': {
-        name: 'Rubén Armenta (el monito)',
+        name: 'Rubén Armenta',
         avatar: 'https://pbs.twimg.com/profile_images/1024663949/mono_200x200.jpg',
         link: 'https://twitter.com/eduflass',
         about: 'Yo nací en una Rivera del Arauca vibrador, soy hermano de los pumas, de las garzas de las rosas y del sol. (je je).'

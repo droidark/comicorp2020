@@ -18,10 +18,16 @@ const authors = {
         about: 'Los amo.'
     },
     '11346946014670287885': {
-        name: 'Rubén Armenta',
+        name: 'Rub\u00E9n Armenta',
         avatar: 'https://pbs.twimg.com/profile_images/1024663949/mono_200x200.jpg',
         link: 'https://twitter.com/bellomonito',
-        about: 'Yo nací en una Rivera del Arauca vibrador, soy hermano de los pumas, de las garzas de las rosas y del sol. (je je).'
+        about: 'Yo nac\u00ED en una Rivera del Arauca vibrador, soy hermano de los pumas, de las garzas de las rosas y del sol. (je je).'
+    },
+    '11024255555693697910': {
+        name: 'OFex-2',
+        avatar: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQjIh2BQwViVp2yEQTlHM1yvFvBKALjY6IIFWjQCzu6IwvEhk_39aPuPAA4TfRlBW8guiq2SZfgLCs6Hbd7_HYJPcIjp6NR4yPG_-bH_s_pi6BmdGc5IduZKmUc-sqEPfNDa1gLTk4-u6AK4xhTqQSn6WGb1BJVYUQVprRSdsyxZQOnsz2PJG04RaPkw/s1600/ofex-2.jpg',
+        link: 'https://vulcansnake.blogspot.com',
+        about: 'Olvidate de la v\u00EDa r\u00E1pida. Si quieres volar, simplemente aprovecha el poder de tu pasi\u00F3n.'
     }
 };
 const colors = [ 'black', 'blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow' ];

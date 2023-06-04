@@ -55,6 +55,7 @@ a {
 
 .clear{ clear: both; }
 .hide { display: none; }
+.video-height { height: 22rem; }
 .avatar {
     @include radius(50%);
 }

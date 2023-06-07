@@ -55,7 +55,21 @@ a {
 
 .clear{ clear: both; }
 .hide { display: none; }
-.video-height { height: 22rem; }
+.video-height {
+    height: 22rem;
+    @include only-xs {
+        height: 12rem;
+    }
+    @include only-sm {
+        height: 14rem;
+    }
+    @include only-md {
+        height: 18rem;
+    }
+    @include only-lg {
+        height: 18rem;
+    }
+}
 .avatar {
     @include radius(50%);
 }

@@ -160,42 +160,39 @@ const buildScore = {
 }
 
 const build = {
+    cardHeader: (post) => {
+        $.cardHeader = $('<a>', {class: 'card-link-top', href: post.link})
+            .append($('<img>', {src: post.thumb, alt: post.title, class: 'card-img-top'}));
+            
+        
+        //$.cardHeader.add('<span></span>');
+        return $.cardHeader;
+    },
+    
+    youTubeHeader: (post) => {
+        const ytRegex = /^(https:\/\/i\.ytimg\.com\/vi\/)([^#\&\?]*)(\/0\.jpg)/gm;
+        const ytId = ytRegex.exec(post.thumb)[2];
+        return $('<iframe>', {allowfullscreen: '',
+            'data-thumbnail-src': 'https://i.ytimg.com/vi/' + ytId + '/0.jpg',
+            class: 'BLOG_video_class video-height',
+            src: 'https://www.youtube.com/embed/' + ytId,
+            'youtube-src-id': ytId});
+    },
+    
     post: (post) => {
+        const yt = post.labels.includes('YouTube');
         $.cardTitleLink = $('<a>', {href: post.link, text: post.title});
         $.cardTitle = $('<h2>', {class: 'card-title'}).append($.cardTitleLink);
         $.cardText = $('<p>', {class: 'card-text', text: post.text + config.afterText});
         $.readMore = $('<a>', {class: 'btn btn-outline-primary read-more', href: post.link, text: config.readMore});
         $.cardBody = $('<div>', {class: 'card-body'}).append($.cardTitle);
-        if(post.score != null) {
-            $.cardBody.append(buildScore.complete(post.score, post.color));
-        }        
-        $.cardBody
-            .append($.cardText)
-            .append($.readMore);
-
-        // YOUTUBE VIDEO INSERT
-        $.cardLinkTop;
-        if (post.labels.includes('YouTube')) {
-            $.ytContainer = $('<div>', {class: 'video-responsive'});
-            const ytRegex = /^(https:\/\/i\.ytimg\.com\/vi\/)([^#\&\?]*)(\/0\.jpg)/gm;
-            const ytId = ytRegex.exec(post.thumb)[2];
-            $.cardLinkTop = $('<iframe>', {
-                allowfullscreen: '',
-                'data-thumbnail-src': 'https://i.ytimg.com/vi/'+ ytId +'/0.jpg',
-                class: 'BLOG_video_class video-height',
-                src: 'https://www.youtube.com/embed/' + ytId,
-                'youtube-src-id': ytId
-            });
-        } else {
-            $.lineEffect = $('<span>', {class: 'line_effect bg-' + post.color});
-            $.cardImage = $('<img>', {class: 'card-img-top', src: post.thumb, alt: post.title});
-            $.cardLinkTop = $('<a>', {class: 'card-link-top', href: post.link}).append($.cardImage);
-        }
         
-        $.card = $('<div>', {class: 'card'})
-            .append($.cardLinkTop)
-            .append($.lineEffect)
-            .append($.cardBody);
+        (post.score != null) && $.cardBody.append(buildScore.complete(post.score, post.color));
+        $.cardBody.append($.cardText).append($.readMore);
+        
+        $.card = $('<div>', {class: 'card'}).append(yt ? build.youTubeHeader(post) : (build.cardHeader(post)));
+        !yt && $.card.append($('<span>', {class: 'line_effect bg-' + post.color}));
+        $.card.append($.cardBody);
         $('#neon').append($.card);
     },
     postInfo: (post) => {

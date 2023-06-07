@@ -19,7 +19,7 @@ a {
     padding-bottom: 1rem;
 }
 // BG COLOR
-.bg-black { background-color: var(--black); }
+.bg-black { background-color: var(--black) !important; }
 .bg-blue { background-color: $blue; }
 .bg-brown { background-color: $brown; }
 .bg-green { background-color: $green; }

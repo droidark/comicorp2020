@@ -32,6 +32,10 @@
         background-color: $soc-icon-snapchat;
         text-shadow:  0 0 1px black;
     }
+    &-tiktok {
+        background-color: $soc-icon-tiktok;
+        color: $soc-icon-tiktok-txt;
+    }
 }
 .video-responsive{
     overflow: hidden;
